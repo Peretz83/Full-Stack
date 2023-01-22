@@ -35,6 +35,15 @@ let carSchema = mongoose.Schema({
     type: String,
     
   },
+   in_stock: {
+    type: Number,
+    
+  },
+   car_id: {
+    type: String,
+    
+  },
+  
   
 })
 

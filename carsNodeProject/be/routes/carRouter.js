@@ -48,4 +48,31 @@ Router.put('/init', async(req, res) => {
 })
 
 
+Router.put('/:car_id/buy',async(req, res) => {
+
+
+try{
+    let carId = req.params.car_id
+
+let purchasedCar = await Car.findOne({car_id:carId})
+
+let newqty = purchasedCar.in_stock -=1
+
+if(purchasedCar.in_stock === 0)
+res.sendStatus(404)
+else
+purchasedCar.in_stock = newqty
+await purchasedCar.save()
+res.status(200).json(purchasedCar)
+
+
+}catch(err){
+  res.status(409).send(err.message)
+
+}
+  
+
+
+})
+
 module.exports = Router

@@ -17,7 +17,8 @@
 
     "maximum_speed": 220,
 
-    "description": "The Toyota Camry is a comfortable and reliable sedan with a smooth ride and great fuel economy."
+    "description": "The Toyota Camry is a comfortable and reliable sedan with a smooth ride and great fuel economy.",
+    "in_stock":10
 
   },
 
@@ -37,7 +38,10 @@
 
     "maximum_speed": 210,
 
-    "description": "The Ford Explorer is a spacious and versatile SUV that is perfect for families and outdoor enthusiasts."
+    "description": "The Ford Explorer is a spacious and versatile SUV that is perfect for families and outdoor enthusiasts.",
+    "in_stock":10,
+    "car_id":"4567"
+
 
   },
 
@@ -57,7 +61,10 @@
 
     "maximum_speed": 250,
 
-    "description": "The BMW M4 is a high-performance coupe that offers thrilling acceleration and handling."
+    "description": "The BMW M4 is a high-performance coupe that offers thrilling acceleration and handling.",
+    "in_stock":10,
+    "car_id":"6767"
+
 
   },
 
@@ -77,7 +84,10 @@
 
     "maximum_speed": 240,
 
-    "description": "The Chevrolet Camaro is a classic American muscle car that offers a thrilling open-air driving experience."
+    "description": "The Chevrolet Camaro is a classic American muscle car that offers a thrilling open-air driving experience.",
+    "in_stock":10,
+    "car_id":"8965"
+
 
   },
 
@@ -97,7 +107,10 @@
 
     "maximum_speed": 230,
 
-    "description": "The VW Golf GTI is a sporty and fun-to-drive hatchback that offers a perfect blend of performance and practicality."
+    "description": "The VW Golf GTI is a sporty and fun-to-drive hatchback that offers a perfect blend of performance and practicality.",
+    "in_stock":10,
+    "car_id":"79412"
+
 
   },
 
@@ -117,7 +130,10 @@
 
     "maximum_speed": 210,
 
-    "description": "The Honda Civic is a popular and reliable sedan that offers a comfortable ride and great fuel economy."
+    "description": "The Honda Civic is a popular and reliable sedan that offers a comfortable ride and great fuel economy.",
+    "in_stock":10,
+    "car_id":"9465"
+
 
   },
 
@@ -137,7 +153,10 @@
 
     "maximum_speed": 220,
 
-    "description": "The Jeep Grand Cherokee is a rugged and capable SUV that is perfect for off-road adventures."
+    "description": "The Jeep Grand Cherokee is a rugged and capable SUV that is perfect for off-road adventures.",
+    "in_stock":10,
+    "car_id":"85297"
+
 
   },
 
@@ -157,7 +176,10 @@
 
     "maximum_speed": 240,
 
-    "description": "nice car"
+    "description": "nice car",
+    "in_stock":10,
+    "car_id":"8942453"
+
 
   }
 
