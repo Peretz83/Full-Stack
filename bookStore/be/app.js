@@ -2,6 +2,7 @@ let express = require('express')
 let path = require('path')
 let mongoose = require('mongoose')
 let config = require('./config/database')
+const cors = require('cors')
 let bodyParser = require('body-parser')
 mongoose.set('strictQuery', true);
 
@@ -17,7 +18,8 @@ db.once('open', () => {
 
 //Init app
 let app = express()
-
+// cos
+app.use(cors())
 //View engine setup
 app.set('views', path.join(__dirname, 'views'))
 // app.set('view engine', 'ejs')
