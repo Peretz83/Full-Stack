@@ -22,6 +22,10 @@ let bookSchema = mongoose.Schema({
   quantity: {
     type: Number,
  
+  },
+  image: {
+    type: String,
+ 
   }
   
 })

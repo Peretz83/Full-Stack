@@ -18,7 +18,7 @@ db.once('open', () => {
 
 //Init app
 let app = express()
-// cos
+// cors
 app.use(cors())
 //View engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -35,11 +35,9 @@ app.use(bodyParser.json());
 
 //Set routes
 let books = require('./routes/books.js')
-app.use('/', books)
+app.use('/api/books', books)
 
 //Start the server
-let port = 3002
+const port = 3002
 
-app.listen(port, () => {
-  console.log('Server started on port ' + port);
-})
+app.listen(port, ()=>console.log(`listening to port http://localhost:${port}/api/books`))
