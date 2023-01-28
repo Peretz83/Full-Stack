@@ -2,8 +2,7 @@ async function loadTable() {
 
   await axios.get("http://localhost:3002/api/books",{}
   ).then(res =>{
-if(res.status === 200)
-{
+if(res.status === 200){
  
 const objects = res.data
 let trHTML = ""

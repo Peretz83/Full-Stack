@@ -1,6 +1,8 @@
 let express = require('express')
 let mongoose = require('mongoose')
 let config = require('./config/database')
+const cors = require('cors')
+let bodyParser = require('body-parser')
 mongoose.set('strictQuery', true);
 
 //Connect to db
@@ -14,6 +16,16 @@ db.once('open', () => {
 //Init app
 let app = express()
 
+//body Parser middleware
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+
+app.use(bodyParser.json());
+
+// cors
+app.use(cors())
 
 //Set routes
 let cars = require('./routes/carRouter.js')

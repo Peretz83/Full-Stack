@@ -5,21 +5,30 @@ const fs = require("fs")
 const Car = require("../models/carModel");
 
 /*
- * GET / index
+ * GET http://localhost:3007/api/cars
  */
 Router.get('/',async(req, res) => {
 
   const cars = await Car.find();
-
-
-
-
-  res.json(cars)
+res.json(cars)
   
 })
 
 /*
- * PUT INIT which sets everything back 
+ * GET http://localhost:3007/api/cars/6767
+ */
+Router.get('/:car_id',async(req, res) => {
+  try{
+let car_id = req.params.car_id
+const car = await Car.findOne({car_id:car_id})
+res.json(car)
+  }catch(err){
+res.status(500).send(err.message)
+  }
+})
+
+/*
+ * PUT http://localhost:3007/api/cars/init (this resets your page)
  */
 Router.put('/init', async(req, res) => {
   
@@ -46,8 +55,63 @@ Router.put('/init', async(req, res) => {
     });
  
 })
+/*
+ * POST http://localhost:3002/api/cars (this creates a new car)
+ */
+Router.post("/",async (req,res)=>{
+  try{
+const car= new Car(req.body)
+let uuid = +(Math.random() + 1).toString().substring(2,8)
+car.car_id = uuid
+await car.save()
+res.status(201).json(car)
+  }catch(err){
+res.status(500).send(err.message)
+  }
+})
 
 
+
+
+
+
+
+
+
+/*
+ * Delete http://localhost:3007/api/cars/9465 (this is the delete)
+ */
+Router.delete('/:car_id',async(req,res)=>{
+  try{
+let car_id =req.params.car_id
+await Car.deleteOne({"car_id":car_id})
+res.sendStatus(204)
+  }catch(err){
+    res.status(500).send(err.message)
+  }
+})
+
+
+  /*
+ * PUT http://localhost:3007/api/cars/:8524797 (this is the edit)
+ */
+Router.put('/:car_id',async(req,res)=>{
+  try{
+    const car_id = req.params.car_id
+const car = req.body;
+const updatedCar = await Car.updateOne({car_id:car_id},car)
+if(updatedCar.matchedCount===0)
+res.sendStatus(404)
+else
+res.json({modified:updatedCar.modifiedCount})
+  }catch(err){
+    res.status(500).send(err.message);
+  }
+  })
+
+  /*
+ * PUT http://localhost:3007/api/cars/:8524797/buy
+ */
 Router.put('/:car_id/buy',async(req, res) => {
 
 
@@ -56,11 +120,12 @@ try{
 
 let purchasedCar = await Car.findOne({car_id:carId})
 
-let newqty = purchasedCar.in_stock -=1
+let newqty = purchasedCar.in_stock ? purchasedCar.in_stock -=1:0
 
-if(purchasedCar.in_stock === 0)
-res.sendStatus(404)
-else
+// if(purchasedCar.in_stock <= 0)
+// res.status(404)
+
+// else
 purchasedCar.in_stock = newqty
 await purchasedCar.save()
 res.status(200).json(purchasedCar)

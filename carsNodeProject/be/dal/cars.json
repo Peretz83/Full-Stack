@@ -3,7 +3,7 @@
 
   {
 
-    "type": "Sedan",
+    "make": "Sedan",
 
     "model": "Toyota Camry",
 
@@ -18,13 +18,14 @@
     "maximum_speed": 220,
 
     "description": "The Toyota Camry is a comfortable and reliable sedan with a smooth ride and great fuel economy.",
-    "in_stock":10
+    "in_stock":10,
+  "car_id":"8524797"
 
   },
 
   {
 
-    "type": "SUV",
+    "make": "SUV",
 
     "model": "Ford Explorer",
 
@@ -47,7 +48,7 @@
 
   {
 
-    "type": "Coupe",
+    "make": "Coupe",
 
     "model": "BMW M4",
 
@@ -70,7 +71,7 @@
 
   {
 
-    "type": "Convertible",
+    "make": "Convertible",
 
     "model": "Chevrolet Camaro",
 
@@ -93,7 +94,7 @@
 
   {
 
-    "type": "Hatchback",
+    "make": "Hatchback",
 
     "model": "VW Golf GTI",
 
@@ -116,7 +117,7 @@
 
   {
 
-    "type": "Sedan",
+    "make": "Sedan",
 
     "model": "Honda Civic",
 
@@ -139,7 +140,7 @@
 
   {
 
-    "type": "SUV",
+    "make": "SUV",
 
     "model": "Jeep Grand Cherokee",
 
@@ -162,7 +163,7 @@
 
   {
 
-    "type": "Coupe",
+    "make": "Coupe",
 
     "model": "Nissan 370Z",
 

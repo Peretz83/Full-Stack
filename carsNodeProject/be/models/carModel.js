@@ -3,7 +3,7 @@ let mongoose = require('mongoose')
 //Car schema
 
 let carSchema = mongoose.Schema({
-  type: {
+  make: {
     type: String,
     
   },
@@ -40,6 +40,10 @@ let carSchema = mongoose.Schema({
     
   },
    car_id: {
+    type: String,
+    
+  },
+   image: {
     type: String,
     
   },
