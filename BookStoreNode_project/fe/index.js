@@ -41,23 +41,28 @@ function showBookCreateBox() {
 }
 
 async function bookCreate() {
-  
-    let isbn = document.getElementById("isbn").value
-    let title = document.getElementById("title").value
-    let description = document.getElementById("description").value
-    let price = document.getElementById("price").value
-    let quantity = document.getElementById("quantity").value
-   
-  
-  await axios.post(`http://localhost:3007/api/books`, {"isbn":isbn, "title":title, "description":description, "price":price, "quantity":quantity}
+  let book = {
+    isbn:  document.getElementById("isbn").value,
+    title:  document.getElementById("title").value,
+    description:  document.getElementById("description").value,
+    price:  document.getElementById("price").value,
+    quantity:  document.getElementById("quantity").value
+  }
+  await axios.post(`http://localhost:3007/api/books`, book
   ).then(res => {
-   
     if (res.status === 201) {
-      Swal.fire(`Successfully created new book '${res.data.title}'.`)
-      loadTable()
+      Swal.fire(`Successfully created new book '${res.data.title}'.`);
+      loadTable();
     } 
   }).catch(err => {
-    alert(err.response.status + "\n\r" + err.response.data + "\n\r" + err.message)
+     if(err.response.status === 400){
+      if (err.response.data.message){
+       
+      alert(err.response.data.message);
+      }
+      }else{
+      alert(err.response.status + "\n\r" + err.response.data + "\n\r" + err.message);
+      }
   });
 }
 
