@@ -1,0 +1,46 @@
+{
+    "books": [
+        {
+            "title": "The Great Gatsby",
+            "isbn": "9780743273565",
+            "description": "A novel by F. Scott Fitzgerald",
+            "price": 10.99,
+            "quantity": 20,
+            "image": "https://149352626.v2.pressablecdn.com/wp-content/uploads/2018/02/CK-3-684x1024.jpg"
+        },
+        {
+            "title": "To Kill a Mockingbird",
+            "isbn": "9780061120084",
+            "description": "A novel by Harper Lee",
+            "price": 8.99,
+            "quantity": 15,
+            "image": "https://media.glamour.com/photos/56e1f3c462b398fa64cbd30b/master/w_1600%2Cc_limit/entertainment-2016-02-17-main.jpg"
+        },
+        {
+            "title": "The Catcher in the Rye",
+            "isbn": "9780316769488",
+            "description": "A novel by J.D. Salinger",
+            "price": 11.99,
+            "quantity": 25,
+            "image": "https://cdn.britannica.com/94/181394-050-2F76F7EE/Reproduction-cover-edition-The-Catcher-in-the.jpg"
+        },
+        {
+            "title": "The Lord of the Rings",
+            "isbn": "9780544003415",
+            "description": "A novel by J.R.R. Tolkien",
+            "price": 14.99,
+            "quantity": 30,
+            "image": "https://m.media-amazon.com/images/I/51kfFS5-fnL._AC_SY1000_.jpg"
+        },
+        {
+            "title": "The Hobbit",
+            "isbn": "9780547928227",
+            "description": "A novel by J.R.R. Tolkien",
+            "price": 12.99,
+            "quantity": 35,
+            "image": "https://m.media-amazon.com/images/I/413V3sIKSJL._AC_SY780_.jpg"
+        }
+    ]
+}
+
+
