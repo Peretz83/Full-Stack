@@ -1,0 +1,44 @@
+{
+    "candy": [
+        {
+            "prod_id": "564545",
+            "title": "Assorted Chocolate Bar",
+            "description": "A delicious chocolate bar made with high-quality cocoa.",
+            "price": 2.99,
+            "quantity": 10,
+            "image": "https://media.gettyimages.com/id/458702839/photo/chocolate-bars.jpg?s=612x612&w=gi&k=20&c=X1LW3XUXnxDAthT7gihzBBck-z98lSflvRY2qhppsMc="
+        },
+        {
+            "prod_id": "569545",
+            "title": "Lollipop",
+            "description": "A sweet and tangy lollipop in a variety of flavors.",
+            "price": 0.99,
+            "quantity": 20,
+            "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/2/18/0/fnd_lollipops-istock.jpg.rend.hgtvcom.476.357.suffix/1424290868237.jpeg"
+        },
+        {
+            "prod_id": "554545",
+            "title": "Jelly Beans",
+            "description": "A classic candy in a variety of fruity flavors.",
+            "price": 1.49,
+            "quantity": 15,
+            "image": "https://candylandstore.com/wp-content/uploads/2017/03/DSC_0329.jpg"
+        },
+        {
+            "prod_id": "562545",
+            "title": "Gummy Bears",
+            "description": "Soft and chewy gummy bears in a variety of flavors.",
+            "price": 2.49,
+            "quantity": 5,
+            "image": "https://media.istockphoto.com/id/1300806540/vector/jelly-bears-of-different-colors-sweet-unhealthy-bad-for-the-teeth-food-dessert-appetizer.jpg?s=612x612&w=0&k=20&c=JMv1GUyTT68NyjU8SHXbUhP0pNuf90f65rGeygkV6UQ="
+        },
+        {
+            "prod_id": "564845",
+            "title": "Sour Candy",
+            "description": "A mix of sour cand in different shapes and flavors.",
+            "price": 3.99,
+            "quantity": 8,
+            "image": "https://cdn.shopify.com/s/files/1/0972/7116/products/898940001016_2048x.png?v=1657546481"
+        }
+    ]
+}
