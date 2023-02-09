@@ -3,7 +3,9 @@ const server = express()
 let bodyParser = require('body-parser')
 require('./dal/dal')
 const cors = require('cors')
+const verify_logged_in = require('./middleware/verify_logged_in')
 server.use(cors())
+
 // const CandyModelJOI = require('../models/candyModelJoi')
 
 //body Parser middleware

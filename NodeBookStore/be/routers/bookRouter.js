@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const fs = require('fs')
+const verify_logged_in = require('../middleware/verify_logged_in')
 const bookModel = require('../models/bookModel')
 const bookModelJOI = require('../models/bookModelJoi')
 /*
@@ -27,27 +28,32 @@ router.get("/", async (request, response) => {
     }
 })
 
-/*
-* DELETE http://localhost:3007/api/books/9788532520056
-*/
-router.delete("/:isbn", async (request, response) => {
+// /*
+// // DELETE http://localhost:3000/api/books/9788532520056
+router.delete("/:_isbn", async (request, response) => {
     try {
-        const isbn = request.params.isbn;
+        const isbn = request.params._isbn;
         const joiBook = new bookModelJOI({isbn: isbn});
-        const errors = joiBook.validateDelete();
+
+        // 2**. Validate the request with the JOI model
+        const errors = joiBook.validateDelete(); // synchronized method for running validations
         if (errors)
             return response.status(400).send(errors);
-        await bookModel.deleteOne({isbn: isbn});
+            
+        await bookModel.deleteOne({"isbn": isbn});
+
+        // When using DELETE, the standard is to send the 204 status without any content
         response.sendStatus(204);
     } catch(err) {
         response.status(500).send(err.message);
     }
 });
 
+
 /*
 * POST http://localhost:3007/api/books
 */
-router.post("/", async (request, response) => {
+router.post("/", verify_logged_in, async (request, response) => {
     try {
         const joiBook = new bookModelJOI(request.body);
         const errors = joiBook.validatePost();

@@ -1,6 +1,7 @@
 const express = require('express')
 const Router = express.Router()
 const fs = require('fs')
+const verify_logged_in = require('../middleware/verify_logged_in')
 const candyModel = require('../models/candyModel')
 const candyModelJoi = require('../models/candyModelJoi')
 
@@ -55,7 +56,7 @@ res.status(500).send(err.message)
 })
 
 // POST http://localhost:3003/api/candystore
-Router.post("/", async (request, response) => {
+Router.post("/",verify_logged_in, async (request, response) => {
     try {
        
         const joiCandy = new candyModelJoi(request.body);
