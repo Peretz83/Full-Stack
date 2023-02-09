@@ -1,7 +1,9 @@
-const { fail } = require("assert")
 const express = require("express")
 const router = express.Router()
+const jwt = require('jsonwebtoken')
+bcrypt = require('bcryptjs')
 const User = require("./../models/userModel")
+const verify_logged_in = require("./../middleware/verify_log_in")
 
 
 router.post("/register", async(req,res)=>{
