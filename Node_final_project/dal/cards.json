@@ -1,0 +1,34 @@
+{
+"cards": [
+        {
+            "company_name": "bills shoes",
+            "user_id": "63e56d9461bd4110e9af9d90",
+            "business_description": "fun stroe",
+            "business_address": "25 street",
+            "phone": "1234567",
+            "photo": "my pic",
+            "createdAt": "2023-02-10T22:39:05.502Z",
+            "card_num": 1284644
+        },
+        {
+            "company_name": "itai candy",
+            "user_id": "63e6c94373dbc8db8e79dfed",
+            "business_description": "fun storecandy",
+            "business_address": "4343 street",
+            "phone": "1234567",
+            "photo": "my pic",
+            "createdAt": "2023-02-10T22:39:05.502Z",
+            "card_num": 1341166
+        },
+        {
+            "company_name": "guy candy",
+            "user_id": "63e6c9d473dbc8db8e79dff8",
+            "business_description": "fun superhero",
+            "business_address": "988 street",
+            "phone": "1234567",
+            "photo": "my pic",
+            "createdAt": "2023-02-10T22:39:05.502Z",
+            "card_num": 1367595
+        }
+    ]
+      }

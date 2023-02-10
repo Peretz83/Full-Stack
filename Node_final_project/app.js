@@ -5,6 +5,7 @@ const app = express()
 const port = 3000
 app.use(express.json())
 dotenv.config({path:"./config.env"})
+mongoose.set('strictQuery', true)
 
 mongoose.connect('mongodb://localhost:27017/finalNodeProjectDB', {
   useNewUrlParser: true,
@@ -23,6 +24,8 @@ mongoose.connect('mongodb://localhost:27017/finalNodeProjectDB', {
 
 const userRouter = require("./routes/userRoutes")
 app.use("/api/users",userRouter)
+const cardRouter = require("./routes/cardRoutes")
+app.use("/api/cards",cardRouter)
 
 app.listen(port, ()=>console.log(`Peretz you are listening to port http://localhost:${port}/api/users`))
 

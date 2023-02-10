@@ -2,14 +2,14 @@ const jwt = require('jsonwebtoken')
 const User = require("./../models/userModel")
 
 
-// token sign function
+// token.sign function
 const signToken = (id, biz) => {
   return jwt.sign({ id, biz }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN
   });
 };
-// ============================== secuirity middleware ===================================
-exports.protector = async (req, res, next) => {
+//  secuirity middleware 
+async function verify_log_in (req, res, next) {
   try {
     let token;
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
@@ -41,4 +41,6 @@ exports.protector = async (req, res, next) => {
     });
   }
 };
-// ================== end of security middleware ==========================
+
+
+module.exports = verify_log_in
