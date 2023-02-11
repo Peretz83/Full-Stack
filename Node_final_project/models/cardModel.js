@@ -23,8 +23,9 @@ business_address:{
   maxlength:100
 },
 phone:{
-  type:String,
-  validate:[validator.isDecimal,"Please provide a valid phone number"]
+type: String,
+    required: [true, 'Please submit a phone number.'],
+    match: [/^[+]?(\d{1,2})?[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/, 'Enter a valid phone number']
 },
 photo:{
   type:String
