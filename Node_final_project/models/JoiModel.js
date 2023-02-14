@@ -1,4 +1,5 @@
-// This is an example of how I am useing JOI, I decided to use Mongoose Validator instead.
+// This is an example of how I am useing JOI and am capable of using JOI, I decided to use Mongoose Validator instead.
+
 
 
 
