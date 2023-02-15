@@ -107,6 +107,12 @@ router.put("/:id",verify_logged_in, async(req,res)=>{
       runValidators:true 
 
     })
+    if(!oneCard){
+      return res.status(400).json({
+        message:"No id found"
+
+      })
+    }
     
     res.status(200).json({
       status:"success",
@@ -131,7 +137,17 @@ router.delete("/:id",verify_logged_in, async(req,res)=>{
 
       })
     }
-    await Card.findByIdAndDelete(id)
+
+    
+    const deleted = await Card.findByIdAndDelete(id)
+
+    
+    if(!deleted){
+      return res.status(400).json({
+        message:"problem with URL details"
+
+      })
+    }
     
     res.status(204).json({
       status:"Deleted",
