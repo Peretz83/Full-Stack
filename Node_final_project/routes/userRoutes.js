@@ -27,7 +27,7 @@ router.post("/register", async(req,res)=>{
     })
 
   }catch(err){
-   res.status(401).json({
+   res.status(400).json({
       status:"fail",
       message: err.message
     })
@@ -51,7 +51,7 @@ if(!user || !(await bcrypt.compare(password, user.password))){
 const token = signToken(user._id, user.biz);
 
 if(!token){
-  return res.status(401).json({status:"problem with auth, sign in again"});
+  return res.status(400).json({status:"problem with auth, sign in again"});
 }
 
 res.status(200).json({
@@ -78,7 +78,7 @@ router.get("/myUser",verify_logged_in, async(req,res)=>{
     })
 
   }catch(err){
-   res.status(401).json({
+   res.status(400).json({
       status:"fail",
       message: err.message
     })

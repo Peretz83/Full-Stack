@@ -1,7 +1,5 @@
 ## Node final project
 
-## Important to note: I decided to use pre(save) mongoose.Schema and npm Validator for validation.
-
 ## Please note in my Models I have provided an example of JOI just as a reference that I know how to use JOI validation.
 
 - USERS: 3 end-points for (POST register, POST login, GET myUser)

@@ -120,7 +120,7 @@ router.put("/:id",verify_logged_in, async(req,res)=>{
     })
 
   }catch(err){
-   res.status(401).json({
+   res.status(400).json({
       status:"fail",
       message: err.message
     })
