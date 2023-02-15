@@ -6,9 +6,9 @@ const cardSchema = new mongoose.Schema({
   
 company_name:{
   type:String,
-  required:true,
-  minlength:2,
-  maxlength:30,
+  required:[true,"Must submit name"],
+  minlength:[2,"Must use 2 characters"],
+  maxlength:[30,"Max character amount is 30"],
 
 },
 user_id:{
