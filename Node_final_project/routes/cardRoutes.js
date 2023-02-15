@@ -17,6 +17,12 @@ const id = req.params.id
       })
     }
     const oneCard = await Card.findById(id)
+    if(!oneCard){
+      return res.status(400).json({
+        message:"No ID found"
+
+      })
+    }
 res.status(200).json({
   status:"success",
   results:oneCard.length,
