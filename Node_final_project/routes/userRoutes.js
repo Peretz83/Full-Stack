@@ -3,8 +3,7 @@ const router = express.Router()
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const User = require("./../models/userModel")
-const verify_logged_in = require("./../middleware/verify_log_in")
-const Card = require("../models/cardModel")
+const verify_log_in = require("./../middleware/verify_log_in")
 
 // token sign function
 const signToken = (id, biz) => {
@@ -13,6 +12,11 @@ const signToken = (id, biz) => {
   });
 };
 
+// this sets the cookie and gives its expirey
+const cookieOptions = {
+  expires: new Date(Date.now()+10*24*60*60*1000),
+  httpOnly:true
+}
 
 router.post("/register", async(req,res)=>{
   try{
@@ -52,7 +56,9 @@ const token = signToken(user._id, user.biz);
 
 if(!token){
   return res.status(400).json({status:"problem with auth, sign in again"});
-}
+  }
+
+  res.cookie("jwt",token,cookieOptions)
 
 res.status(200).json({
   status: "success",
@@ -67,7 +73,7 @@ res.status(400).json({
 }
 })
 
-router.get("/myUser",verify_logged_in, async(req,res)=>{
+router.get("/myUser",verify_log_in, async(req,res)=>{
    try{
     const decoded = req.user
     const currentUser = await User.findById(decoded.id).select("-password")

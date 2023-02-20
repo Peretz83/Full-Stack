@@ -3,9 +3,9 @@ const router = express.Router()
 const fs = require('fs')
 const Card = require("../models/cardModel")
 
-const verify_logged_in = require("./../middleware/verify_log_in")
+const verify_log_in = require("./../middleware/verify_log_in")
 
-router.get("/:id",verify_logged_in, async(req,res)=>{
+router.get("/:id",verify_log_in, async(req,res)=>{
 try{
 const id = req.params.id
 
@@ -36,7 +36,7 @@ res.status(400).json({
 }
 })
 
-router.get("/",verify_logged_in, async(req,res)=>{
+router.get("/",verify_log_in, async(req,res)=>{
 try{
 const allCards = await Card.find()
 res.status(200).json({
@@ -52,7 +52,7 @@ res.status(404).json({
 }
 })
 
-router.post("/",verify_logged_in, async(req,res)=>{
+router.post("/",verify_log_in, async(req,res)=>{
   try{
 const decoded = req.user
 req.body.user_id = decoded.id
@@ -92,7 +92,7 @@ res.status(500).send(err.message)
 
 });
 
-router.put("/:id",verify_logged_in, async(req,res)=>{
+router.put("/:id",verify_log_in, async(req,res)=>{
   try{
     // const {id} = req.params
     const id = req.params.id
@@ -127,7 +127,7 @@ router.put("/:id",verify_logged_in, async(req,res)=>{
   }
 })
 
-router.delete("/:id",verify_logged_in, async(req,res)=>{
+router.delete("/:id",verify_log_in, async(req,res)=>{
   try{
    
     const id = req.params.id

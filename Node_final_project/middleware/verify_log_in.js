@@ -3,11 +3,11 @@ const User = require("./../models/userModel")
 
 
 // token.sign function
-const signToken = (id, biz) => {
-  return jwt.sign({ id, biz }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN
-  });
-};
+// const signToken = (id, biz) => {
+//   return jwt.sign({ id, biz }, process.env.JWT_SECRET, {
+//     expiresIn: process.env.JWT_EXPIRES_IN
+//   });
+// };
 //  secuirity middleware 
 async function verify_log_in (req, res, next) {
   try {
@@ -17,9 +17,7 @@ async function verify_log_in (req, res, next) {
     }
 
     if (!token) {
-      return res
-        .status(401)
-        .json({ status: 'Fail', message: 'You are not logged in! Please log in to get access' });
+      return res.status(401).json({ status: 'Fail', message: 'You are not logged in! Please log in to get access' });
     }
 
     //  Verifiy token
