@@ -1,1 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-primary" href="#">Task IO</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+      </ul>
+      <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+    </div>
+  </div>
+</nav>
 
+<main class="p-4 main-bg">
+  <!-- <p> {{ title | titlecase }} </p>
+    <img [src]="getImagePath()"> -->
+
+  <h1 class="text-center mb-3">
+    Today's Tasks
+    <span [ngClass]="listStatusCss()">({{tasks.length}})</span>
+    <br>
+    <small>{{ today | date }}</small>
+  </h1>
+
+  <ul class="list-group">
+    <li *ngFor="let task of tasks" [ngClass]="completedCss(task)"
+      class="list-group-item d-flex justify-content-between align-items-center">
+      {{task.title | titlecase}}
+      <div>
+        <app-button [icon]="'bi-pencil'"></app-button>
+        <app-button [icon]="'bi-check-lg'" *ngIf="!task.complete"></app-button>
+      </div>
+
+    </li>
+  </ul>
+
+  <h2>My Projects</h2>
+
+  <div class="row">
+    <app-project-card *ngFor="let project of projects" [projectItem]="project"></app-project-card>
+  </div>
+
+
+
+  <app-footer></app-footer>
+
+</main>

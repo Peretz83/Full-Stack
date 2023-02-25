@@ -18,6 +18,10 @@ const cookieOptions = {
   httpOnly:true
 }
 
+
+/*
+* POST http://localhost:3000/api/users/register
+*/
 router.post("/register", async(req,res)=>{
   try{
     const newUser = await User.create(req.body);
@@ -38,6 +42,9 @@ router.post("/register", async(req,res)=>{
   }
 })
 
+/*
+* POST http://localhost:3000/api/users/login
+*/
 router.post("/login", async(req,res)=>{
 try{
   const { email, password } = req.body;
@@ -73,6 +80,9 @@ res.status(400).json({
 }
 })
 
+/*
+* GET http://localhost:3000/api/users/myUser
+*/
 router.get("/myUser",verify_log_in, async(req,res)=>{
    try{
     const decoded = req.user
