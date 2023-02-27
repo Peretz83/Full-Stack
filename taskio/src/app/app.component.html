@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand text-primary" href="#">Task IO</a>
+    <a class="navbar-brand text-primary" routerLink="/">Task IO</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a routerLink="/home" class="nav-link active" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/projects" class="nav-link active" aria-current="page">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/about-us" class="nav-link active" aria-current="page">About-Us</a>
         </li>
       </ul>
       <!-- <form class="d-flex" role="search">
@@ -20,15 +26,15 @@
 </nav>
 
 <main class="p-4 main-bg">
-  <!-- <p> {{ title | titlecase }} </p>
-    <img [src]="getImagePath()"> -->
+  <router-outlet></router-outlet>
 
-  <h1 class="text-center mb-3">
-    Today's Tasks
-    <span [ngClass]="listStatusCss()">({{tasks.length}})</span>
-    <br>
-    <small>{{ today | date }}</small>
-  </h1>
+
+
+  <!-- <app-section-title [text]="sectionTitle1"></app-section-title>
+
+  <span [ngClass]="listStatusCss()">({{tasks.length}})</span>
+  <br>
+  <small>{{ today | date }}</small>
 
   <ul class="list-group">
     <li *ngFor="let task of tasks" [ngClass]="completedCss(task)"
@@ -42,14 +48,15 @@
     </li>
   </ul>
 
-  <h2>My Projects</h2>
+  <app-section-title [text]="sectionTitel2"></app-section-title>
 
   <div class="row">
     <app-project-card *ngFor="let project of projects" [projectItem]="project"></app-project-card>
-  </div>
+  </div> -->
 
 
 
-  <app-footer></app-footer>
+
 
 </main>
+<app-footer [developerName]="myName"></app-footer>

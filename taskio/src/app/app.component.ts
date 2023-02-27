@@ -22,6 +22,10 @@ export interface Project {
 export class AppComponent {
     title = 'task io';
     today = new Date();
+    myName = "Peretz83"
+
+    sectionTitle1 = 'Today\'s Tasks'
+    sectionTitel2 = 'My Projects'
 
     projects: Array<Project> = [
         {
@@ -44,6 +48,7 @@ export class AppComponent {
             complete: false,
             description: 'aaa'
         },
+        
         {
             title: 'A second task',
             complete: false,

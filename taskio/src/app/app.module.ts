@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { FooterComponent } from './footer/footer.component';
+import { SectionTitleComponent } from './section-title/section-title.component';
+import { ProjectPageComponent } from './project-page/project-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     ProjectCardComponent,
-    FooterComponent
+    FooterComponent,
+    SectionTitleComponent,
+    ProjectPageComponent,
+    HomePageComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
