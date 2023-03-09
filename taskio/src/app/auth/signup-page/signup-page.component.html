@@ -3,24 +3,29 @@
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="col-3 m-auto">
   <div class="mb-3">
     <label class="form-label" for="">name:</label>
-    <input formControlName="name" class="form-control" type="text">
-    <p class="text-danger">
+    <input #nameFieldRef formControlName="name" class="form-control" type="text">
+    <!-- <p class="text-danger">
       {{!this.signupForm.controls.name.invalid? '': "Name must have at least 2 characters."}}
-    </p>
+    </p> -->
   </div>
+
+  <app-field-error [formField]="getFieldControl('name')"></app-field-error>
 
   <div class="mb-3">
     <label class="form-label" for="">Email:</label>
     <input formControlName="email" class="form-control" type="text">
-    <p class="text-danger">{{!this.signupForm.controls.email.invalid? "": "Must use valid email"}}</p>
+    <!-- <p class="text-danger">{{!this.signupForm.controls.email.invalid? "": "Must use valid email"}}</p> -->
   </div>
+
+  <app-field-error [formField]="getFieldControl('email')"></app-field-error>
 
   <div class="mb-3">
     <label class="form-label" for="">Password:</label>
     <input formControlName="password" class="form-control" type="text">
     <p class="text-danger">
-      {{!this.signupForm.controls.password.invalid? "": "Password must contain 6 or more characters"}}</p>
+      <!-- {{!this.signupForm.controls.password.invalid? "": "Password must contain 6 or more characters"}}</p> -->
   </div>
+  <app-field-error [formField]="getFieldControl('password')"></app-field-error>
   <button [disabled]="signupForm.invalid" type="submit" class="btn btn-primary">Sign-up</button>
 
 </form>

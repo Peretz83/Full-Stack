@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SignupPageComponent } from './signup-page/signup-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { FieldErrorComponent } from './field-error/field-error.component';
 
 
 
 @NgModule({
   declarations: [
     SignupPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    FieldErrorComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     
   ],
   exports:[
-SignupPageComponent,
-LoginPageComponent
+SignupPageComponent
   ]
 })
 export class AuthModule { }

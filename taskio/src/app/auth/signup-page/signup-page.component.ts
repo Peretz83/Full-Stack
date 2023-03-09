@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
 
 
@@ -7,27 +7,39 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.scss']
 })
-export class SignupPageComponent {
+export class SignupPageComponent implements AfterViewInit {
+
+  @ViewChild('nameFieldRef') nameField!: ElementRef;
 
   signupForm = new FormGroup({
     name: new FormControl("",{
-      validators:[Validators.required,Validators.minLength(2),Validators.maxLength(10)]
+      validators:[Validators.required, Validators.minLength(2), Validators.maxLength(10)]
     }),
     email: new FormControl("",{
       validators:[Validators.required,Validators.email]
     }),
      password: new FormControl("",{
-         validators:[Validators.required,Validators.minLength(6)]
+         validators:[Validators.required, Validators.minLength(6)]
      })
   })
+
+  ngAfterViewInit(): void {
+    this.nameField.nativeElement.focus();
+  }
+
+  getFieldControl(field: string): FormControl{
+    return this.signupForm.get(field) as FormControl
+  }
+
  onSubmit(){
   if(this.signupForm.invalid){
     return 
   }
   this.signupForm.reset()
-  console.log(this.signupForm);
   
  }
+
+
 
 
 

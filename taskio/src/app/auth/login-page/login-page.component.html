@@ -4,15 +4,18 @@
   <div class="mb-3">
     <label class="form-label" for="">Email:</label>
     <input formControlName="email" class="form-control" type="text">
-    <p class="text-danger">{{!this.loginForm.controls.email.invalid? "": "Must use valid email"}}</p>
+    <!-- <p class="text-danger">{{!this.loginForm.controls.email.invalid? "": "Must use valid email"}}</p> -->
   </div>
+  <app-field-error [formField]="getFieldControl('email')"></app-field-error>
 
   <div class="mb-3">
     <label class="form-label" for="">Password:</label>
     <input formControlName="password" class="form-control" type="text">
     <p class="text-danger">
-      {{!this.loginForm.controls.password.invalid? "": "Password must contain 6 or more characters"}}</p>
+      <!-- {{!this.loginForm.controls.password.invalid? "": "Password must contain 6 or more characters"}}</p> -->
   </div>
+  <app-field-error [formField]="getFieldControl('password')"></app-field-error>
+
   <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Sign-up</button>
 
 </form>

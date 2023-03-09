@@ -16,6 +16,10 @@ export class LoginPageComponent {
          validators:[Validators.required,Validators.minLength(6)]
      })
   })
+  getFieldControl(field: string): FormControl{
+    return this.loginForm.get(field) as FormControl
+  }
+
  onSubmit(){
   if(this.loginForm.invalid){
     return 
