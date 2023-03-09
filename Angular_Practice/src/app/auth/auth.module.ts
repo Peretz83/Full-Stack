@@ -13,12 +13,13 @@ import { LoginPageComponent } from './login-page/login-page.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    
+       ReactiveFormsModule
   ],
   exports:[
-SignupPageComponent,
-LoginPageComponent
+    SignupPageComponent,
+    LoginPageComponent
+
+ 
   ]
 })
 export class AuthModule { }

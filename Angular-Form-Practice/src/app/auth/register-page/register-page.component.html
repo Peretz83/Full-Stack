@@ -1,0 +1,26 @@
+<h1 class="text-center m-4 mt-1">Register Below</h1>
+
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="col-2 m-auto">
+  <div class="mb-3">
+    <label class="form-label" for="">name:</label>
+    <input formControlName="name" class="form-control" type="text">
+    <p>{{this.registerForm.controls.name.invalid? "" : "success"}}</p>
+
+  </div>
+
+  <div class="mb-3">
+
+    <label class="form-label" for="">Email:</label>
+    <input formControlName="email" class="form-control" type="text">
+    <p>{{this.registerForm.invalid ? 'error': ""}}</p>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label" for="">Password:</label>
+    <input formControlName="password" class="form-control" type="text">
+
+  </div>
+  <button type="submit" class="btn btn-primary">Sign-up</button>
+
+</form>

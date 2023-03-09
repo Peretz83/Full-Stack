@@ -1,39 +1,26 @@
 <h1 class="text-center">Register below</h1>
-<div class="reg-form p-4">
-  <form action="">
-    <div class="col">
-      <div class="example-container col-md-6">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter Name</mat-label>
-          <input matInput>
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        </mat-form-field>
-      </div>
 
-      <div class="example-container col-md-6">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="example@example.com" [formControl]="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          <mat-icon matSuffix>email</mat-icon>
-        </mat-form-field>
-      </div>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="col-3 m-auto">
+  <div class="mb-3">
+    <label class="form-label" for="">name:</label>
+    <input formControlName="name" class="form-control" type="text">
+    <p class="text-danger">
+      {{!this.signupForm.controls.name.invalid? '': "Name must have at least 2 characters."}}
+    </p>
+  </div>
 
-      <div class="example-container col-md-6">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
+  <div class="mb-3">
+    <label class="form-label" for="">Email:</label>
+    <input formControlName="email" class="form-control" type="text">
+    <p class="text-danger">{{!this.signupForm.controls.email.invalid? "": "Must use valid email"}}</p>
+  </div>
 
+  <div class="mb-3">
+    <label class="form-label" for="">Password:</label>
+    <input formControlName="password" class="form-control" type="text">
+    <p class="text-danger">
+      {{!this.signupForm.controls.password.invalid? "": "Password must contain 6 or more characters"}}</p>
+  </div>
+  <button [disabled]="signupForm.invalid" type="submit" class="btn btn-primary">Sign-up</button>
 
-      </div>
-      <div class="text-center">
-        <button mat-raised-button color="accent">click</button>
-      </div>
-    </div>
-  </form>
-</div>
+</form>
