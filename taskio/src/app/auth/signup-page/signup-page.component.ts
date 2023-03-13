@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { LoggerService } from 'src/app/core/logger.service';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { FormControl,FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent implements AfterViewInit {
+  
+  constructor(private loger: LoggerService) {}
 
   @ViewChild('nameFieldRef') nameField!: ElementRef;
 
@@ -24,6 +27,7 @@ export class SignupPageComponent implements AfterViewInit {
   })
 
   ngAfterViewInit(): void {
+    this.loger.log('ngAfterViewInit')
     this.nameField.nativeElement.focus();
   }
 

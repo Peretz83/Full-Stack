@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class ExampleService {
  
 
-//   tasksUrl = 'http://example.com`
-//   constructor() { }
+  tasksUrl = 'http://example.com'
+  constructor() { }
 
 //   getTasks(url:string):(
 //     // send fetch request to server

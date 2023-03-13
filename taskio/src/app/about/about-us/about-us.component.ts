@@ -20,7 +20,7 @@ export class AboutUsComponent {
       validators:[Validators.required,Validators.email]
     }),
      message: new FormControl("",{
-         validators:[Validators.required, Validators.maxLength(300)]
+         validators:[Validators.required,Validators.minLength(16), Validators.maxLength(300)]
      })
   })
 
