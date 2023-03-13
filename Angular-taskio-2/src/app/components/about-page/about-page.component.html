@@ -1,0 +1,25 @@
+<p class="text-center">about-page</p>
+<div class="container w-50">
+  <form [formGroup]="contactForm" (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label for="" class="form-label">Name</label>
+      <input formControlName="name" type="text" class="form-control" id="name">
+
+    </div>
+    <app-field-errors [formField]="getFieldControl('name')"></app-field-errors>
+    <div class="mb-3">
+      <label for="" class="form-label">Email</label>
+      <input formControlName="email" type="text" class="form-control" id="email">
+    </div>
+    <app-field-errors [formField]="getFieldControl('email')"></app-field-errors>
+
+    <div class="mb-3">
+      <label class="form-label" id="message"></label>
+      <textarea formControlName="message" class="form-control" name="message" id="message" cols="30"
+        rows="4"></textarea>
+    </div>
+    <app-field-errors [formField]="getFieldControl('message')"></app-field-errors>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

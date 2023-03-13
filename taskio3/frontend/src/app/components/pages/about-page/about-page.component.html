@@ -1,0 +1,27 @@
+<titles title="About-Page"></titles>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore inventore nesciunt eveniet culpa at, ex sint porro
+  hic quos quisquam, rem, quasi cupiditate sapiente iusto aut odio perspiciatis nisi accusamus!</p>
+
+<titles title="Contact Us"></titles>
+
+<div class="container w-50">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" action="">
+    <div class="mb-3">
+      <label class="form-label" for="">Name:</label>
+      <input formControlName="name" class="form-control" type="text">
+    </div>
+    <app-field-error [formField]="getFieldControl('name')"></app-field-error>
+    <div class="mb-3">
+      <label class="form-label" for="">Email:</label>
+      <input formControlName="email" class="form-control" type="email">
+    </div>
+    <app-field-error [formField]="getFieldControl('email')"></app-field-error>
+    <div class="mb-3">
+      <label class="form-label" for="">Message:</label>
+      <textarea formControlName="message" class="form-control" name="" id="" cols="30" rows="4"></textarea>
+    </div>
+    <app-field-error [formField]="getFieldControl('message')"></app-field-error>
+    <button class="btn btn-info" type="submit">Submit</button>
+  </form>
+</div>
