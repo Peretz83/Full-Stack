@@ -1,53 +1,52 @@
-import { AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoggerService } from 'src/app/core/logger.service';
 
-
 @Component({
-  selector: 'app-signup-page',
-  templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.scss']
+    selector: 'app-signup-page',
+    templateUrl: './signup-page.component.html',
+    styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent implements AfterViewInit {
-  
-  constructor(private loger: LoggerService) {}
+    // nameField = '';
 
-  @ViewChild('nameFieldRef') nameField!: ElementRef;
+    // formValid(): boolean {
+    //     return (this.nameField.length >= 2);
+    // }
 
-  signupForm = new FormGroup({
-    name: new FormControl("",{
-      validators:[Validators.required, Validators.minLength(2), Validators.maxLength(10)]
-    }),
-    email: new FormControl("",{
-      validators:[Validators.required,Validators.email]
-    }),
-     password: new FormControl("",{
-         validators:[Validators.required, Validators.minLength(6)]
-     })
-  })
+    constructor(private logger: LoggerService) { }
 
-  ngAfterViewInit(): void {
-    this.loger.log('ngAfterViewInit')
-    this.nameField.nativeElement.focus();
-  }
+    @ViewChild('nameFieldRef') nameField!: ElementRef;
 
-  getFieldControl(field: string): FormControl{
-    return this.signupForm.get(field) as FormControl
-  }
+    signupForm = new FormGroup({
+        name: new FormControl('', {
+            validators: [Validators.required, Validators.maxLength(20)]
+        }),
+        email: new FormControl('', {
+            validators: [Validators.required, Validators.email]
+        }),
+        password: new FormControl('', {
+            validators: [Validators.required, Validators.minLength(6)]
+        })
+    })
 
- onSubmit(){
-  if(this.signupForm.invalid){
-    return 
-  }
-  this.signupForm.reset()
-  
- }
+    ngAfterViewInit(): void {
+        this.logger.log('ngAfterViewInit');
+        // console.log('ngAfterViewInit');
+        this.nameField.nativeElement.focus();
+    }
+
+    getFieldControl(field: string): FormControl {
+        return this.signupForm.get(field) as FormControl;
+    }
+
+    onSubmit() {
+        if (this.signupForm.invalid) {
+            return;
+        }
+
+        console.log(this.signupForm.value);
+    }
 
 
-
-
-
-
-
-   
 }

@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AboutFieldErrorComponent } from './about-field-error/about-field-error.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
 
 
 
 @NgModule({
-  declarations: [
-    AboutUsComponent,
-    AboutFieldErrorComponent,
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule
-
-  ],
-  exports: [
-    AboutUsComponent,
-    AboutFieldErrorComponent
-  ]
+    declarations: [
+        AboutPageComponent,
+        ContactInfoComponent
+    ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule
+    ],
+    exports: [
+        AboutPageComponent
+    ]
 })
 export class AboutModule { }

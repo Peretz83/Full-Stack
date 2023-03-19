@@ -8,5 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ButtonComponent {
     @Input() icon = '';
 
-  
+    doSomething(message: string) {
+        console.log(message);
+    }
 }
