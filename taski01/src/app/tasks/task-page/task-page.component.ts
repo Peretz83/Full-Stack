@@ -48,12 +48,12 @@ export class TaskPageComponent {
             return;
         }
 
-        // this.api.addTask(this.addTaskForm.value).subscribe({
-        //     next: (data: Task) => {
-        //         this.getTasks();
-        //     },
-        //     error: (err) => console.log(err)
-        // })
+        this.api.addTask(this.addTaskForm.value).subscribe({
+            next: (data: Task) => {
+                this.getTasks();
+            },
+            error: (err) => console.log(err)
+        })
     }
 
 }

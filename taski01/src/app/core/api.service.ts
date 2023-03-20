@@ -14,4 +14,12 @@ export class ApiService {
    getTasks(): Observable<Array<Task>> {
         return this.http.get<Array<Task>>('http://localhost:3000/tasks')
     }
+
+     addTask(task: Task): Observable<Task> {
+        return this.http.post<Task>(
+            'http://localhost:3000/tasks',
+            task,
+            { headers: { 'Content-Type': 'application/json' } }
+        )
+    }
 }

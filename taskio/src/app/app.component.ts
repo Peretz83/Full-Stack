@@ -3,6 +3,7 @@ import { SessionService } from './core/session.service';
 
 export interface Task {
     title?: string | null;
+    _id?: string | null;
     complete?: boolean | null;
     description?: string | null;
 }
