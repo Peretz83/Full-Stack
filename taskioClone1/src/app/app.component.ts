@@ -1,6 +1,7 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { ApiService } from './core/api.service';
+import { AuthService } from './core/auth.service';
 import { SessionService } from './core/session.service';
 
 export interface Task {
@@ -11,11 +12,10 @@ export interface Task {
 }
 
 export interface Project {
-    title?: string|null;
-    description?: string|null;
-    image?: string|null;
-    status?: string|null;
-    _id?: string|null;
+    title: string;
+    description: string;
+    image: string;
+    status: 'PLANNED' | 'IN PROGRESS' | 'DONE'
 }
 
 export interface User {
@@ -37,8 +37,13 @@ export class AppComponent implements AfterViewInit {
     constructor(
         private session: SessionService,
         private api: ApiService,
-        private router: Router
+        private router: Router,
+        private auth: AuthService
     ) { }
+
+    loggedIn(): boolean {
+        return this.auth.isLoggedIn();
+    }
 
     ngAfterViewInit(): void {
         this.session.redirectToHome();

@@ -19,10 +19,10 @@ export class HomePageComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.api.getUserPosts().subscribe({
-            next: (data) => this.logger.log(data.toString()),
-            error: (err) => console.log(err)
-        })
+        // this.api.getUserPosts().subscribe({
+        //     next: (data) => this.logger.log(data.toString()),
+        //     error: (err) => console.log(err)
+        // })
     }
 
     projects: Array<Project> = [

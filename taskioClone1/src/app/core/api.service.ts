@@ -11,7 +11,7 @@ export class ApiService {
     serverUrl = 'http://localhost:3000/'
 
     // private token = ''
-    TOKEN_KEY = 'token'
+    private TOKEN_KEY = 'token'
 
     setToken(value: string) {
         localStorage.setItem(this.TOKEN_KEY, value);
@@ -36,16 +36,6 @@ export class ApiService {
     getTasks(): Observable<Array<Task>> {
         return this.http.get<Array<Task>>(
             `${this.serverUrl}tasks`,
-            {
-                headers: {
-                    'x-auth-token': this.getToken()
-                }
-            }
-        )
-    }
-    getProjects(): Observable<Array<Project>> {
-        return this.http.get<Array<Project>>(
-            `${this.serverUrl}projects`,
             {
                 headers: {
                     'x-auth-token': this.getToken()
@@ -117,17 +107,4 @@ export class ApiService {
     login(user: User): Observable<User> {
         return this.POST<User>('users/login', user);
     }
-     deleteProject(id: string): Observable<Project> {
-        return this.http.delete<Project>(
-            `${this.serverUrl}projects/${id}`,
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'x-auth-token': this.getToken()
-                }
-            }
-        )
-    }
-
-   
 }

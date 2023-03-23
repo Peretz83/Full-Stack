@@ -13,7 +13,7 @@ const routes: Routes = [
     { path: 'about', component: AboutPageComponent },
     { path: 'signup', component: SignupPageComponent },
     { path: 'login', component: LoginPageComponent },
-    { path: 'tasks', component: TaskPageComponent },
+    { path: 'tasks', component: TaskPageComponent,  },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

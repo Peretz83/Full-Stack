@@ -10,7 +10,7 @@
                 <li class="nav-item">
                     <a routerLink="/home" class="nav-link active" aria-current="page">Home</a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="loggedIn()" class="nav-item">
                     <a routerLink="/projects" class="nav-link active" aria-current="page">Projects</a>
                 </li>
                 <li class="nav-item">
@@ -18,7 +18,7 @@
                         About
                     </a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="loggedIn()" class="nav-item">
                     <a routerLink="/tasks" class="nav-link active" aria-current="page">Tasks</a>
                 </li>
             </ul>
@@ -29,13 +29,13 @@
                             Sign Up
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li *ngIf="!loggedIn()" class="nav-item">
                         <a routerLink="/login" class="nav-link active" aria-current="page">
                             Login
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <button (click)="logout()" class="nav-link active" aria-current="page">
+                    <li *ngIf="loggedIn()" class="nav-item">
+                        <button (click)="logout()" class="btn btn-link nav-link active" aria-current="page">
                             Logout
                         </button>
                     </li>
