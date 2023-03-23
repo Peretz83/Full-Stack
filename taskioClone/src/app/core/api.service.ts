@@ -43,6 +43,16 @@ export class ApiService {
             }
         )
     }
+    getProjects(): Observable<Array<Project>> {
+        return this.http.get<Array<Project>>(
+            `${this.serverUrl}projects`,
+            {
+                headers: {
+                    'x-auth-token': this.getToken()
+                }
+            }
+        )
+    }
 
     addTask(task: Task): Observable<Task> {
         // return this.http.post<Task>(
@@ -107,4 +117,17 @@ export class ApiService {
     login(user: User): Observable<User> {
         return this.POST<User>('users/login', user);
     }
+     deleteProject(id: string): Observable<Project> {
+        return this.http.delete<Project>(
+            `${this.serverUrl}projects/${id}`,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-auth-token': this.getToken()
+                }
+            }
+        )
+    }
+
+   
 }

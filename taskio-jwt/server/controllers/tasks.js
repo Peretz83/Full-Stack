@@ -1,15 +1,15 @@
 const joi = require('joi');
-const { Project } = require('../models/Project');
+const { Task } = require('../models/Task');
 
 module.exports = {
     getAll: async function (req, res, next) {
         try {
-            const result = await Project.find({});
+            const result = await Task.find({});
             res.json(result);
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({ error: 'error getting projects' });
+            res.status(400).json({ error: 'error getting tasks' });
         }
     },
 
@@ -26,9 +26,9 @@ module.exports = {
                 throw `error get details`;
             }
 
-            const project = await Project.findById(value.id);
-            if (!project) throw "Invalid project id, no such project.";
-            res.json(project);
+            const task = await Task.findById(value.id);
+            if (!task) throw "Invalid task id, no such task.";
+            res.json(task);
         }
         catch (err) {
             res.status(400).json({ error: "Invalid data" });
@@ -41,31 +41,31 @@ module.exports = {
             const schema = joi.object({
                 title: joi.string().min(2).max(256).required(),
                 description: joi.string().min(2).max(1024).required(),
-                status: joi.string(),
+                complete: joi.boolean(),
             });
 
             const { error, value } = schema.validate(req.body);
 
             if (error) {
                 console.log(error.details[0].message);
-                throw 'error add project';
+                throw 'error add task';
             }
 
-            const project = new Project(value);
-            const newProject = await project.save();
-            res.json(newProject);
+            const task = new Task(value);
+            const newTask = await task.save();
+            res.json(newTask);
         }
         catch (err) {
             console.log(err.message);
-            res.status(400).json({ error: `error adding project` });
+            res.status(400).json({ error: `error adding task` });
         }
     },
 
     updateDetails: async function (req, res, next) {
         try {
             const schema = joi.object({
-                title: joi.string().min(2).max(256).required(),
-                description: joi.string().min(2).max(1024).required(),
+                title: joi.string().min(2).max(256),
+                description: joi.string().min(2).max(1024),
                 complete: joi.boolean(),
             }).min(1);
 
@@ -73,16 +73,16 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                throw 'error updating project';
+                throw 'error updating task';
             }
 
             const filter = {
                 _id: req.params.id
             };
 
-            const project = await Project.findOneAndUpdate(filter, value);
-            if (!project) throw "No project with this ID in the database";
-            const updated = await Project.findById(project._id);
+            const task = await Task.findOneAndUpdate(filter, value);
+            if (!task) throw "No task with this ID in the database";
+            const updated = await Task.findById(task._id);
             res.json(updated);
         }
         catch (err) {
@@ -101,10 +101,10 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                throw `error delete project`;
+                throw `error delete task`;
             }
 
-            const deleted = await Project.findOneAndRemove({
+            const deleted = await Task.findOneAndRemove({
                 _id: value.id
             });
 
@@ -113,7 +113,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err.message);
-            res.status(400).json({ error: `error delete project` });
+            res.status(400).json({ error: `error delete task` });
         }
     },
 }
