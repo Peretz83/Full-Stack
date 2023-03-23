@@ -8,6 +8,14 @@ export interface User {
     token?: string | null;
 }
 
+export interface Project {
+    title?: string|null;
+    description?: string|null;
+    image?: string|null;
+    status?: string|null;
+    _id?: string|null;
+}
+
 
 @Component({
   selector: 'app-root',
