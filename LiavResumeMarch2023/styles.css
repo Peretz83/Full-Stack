@@ -1,0 +1,429 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.resume {
+  width: 43%;
+  height: 100%;
+  border: 2px solid black;
+  margin: 50px auto;
+
+}
+
+@media(max-width:1500px) {
+  .resume {
+    min-width: 600px;
+
+
+  }
+
+  .position-title {
+    font-size: 14px;
+  }
+
+  /* .img-wrap{
+    
+      width: 75%;
+      height: 100px;
+      background-image: url(/tamars-profile-pic.jpeg);
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: cover;
+      border-radius: 50%;
+      margin-top: 20px;
+  background-color: red;
+  }  */
+
+}
+
+@media(max-width:400px) {
+  .resume {
+    margin: 0px auto;
+  }
+}
+
+.name-sec {
+  background-color: #232D3D;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.name {
+  color: #FEFFFF;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 50px;
+  font-family: sans-serif;
+
+}
+
+.position-sec {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.line-1 {
+  width: 33%;
+  height: 4px;
+  background-color: #998848;
+
+}
+
+.position-title {
+  color: #998848;
+  font-family: sans-serif;
+}
+
+.line-2 {
+  width: 33%;
+  height: 4px;
+  background-color: #998848;
+}
+
+.contact-sec {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.adress-sec {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  border-right: 4px #998848 solid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#location-icon {
+
+  color: #998848;
+
+}
+
+#email-icon {
+
+  color: #998848;
+
+}
+
+#phone-icon {
+
+  color: #998848;
+
+}
+
+.my-address {
+  width: 80%;
+  font-size: 12px;
+  text-align: center;
+  color: #FEFFFF;
+  margin-top: 8px;
+}
+
+.my-number {
+  width: 80%;
+  font-size: 12px;
+  text-align: center;
+  color: #FEFFFF;
+  margin-top: 8px;
+}
+
+.my-email {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: #FEFFFF;
+  margin-top: 8px;
+}
+
+.phone-sec {
+  width: 33%;
+  height: 100%;
+  border-right: 4px #998848 solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.email-sec {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* left side sec */
+
+.left-side-wrap {
+  width: 40%;
+  background-color: lightgray;
+  padding: 20px 40px 80px 40px;
+
+
+
+}
+
+.img-wrap {
+  width: 85%;
+  width: 75%;
+  height: 220px;
+  background-image: url(/523A7205.jpeg);
+
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  /* border-radius: 50%; */
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  /* box-shadow: 2px 10px 10px 2px black; */
+  box-shadow: 0 0 5px 2px black
+
+}
+
+.edu-header-wrap {
+  width: 100%;
+  padding: 3px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-top: #232D3D 2px solid;
+  border-bottom: #232D3D 2px solid;
+  display: flex;
+  align-items: center;
+}
+
+.edu-header {
+  letter-spacing: 2px;
+  color: #232D3D;
+  font-family: sans-serif;
+  font-size: 14px;
+
+}
+
+.diploma-header {
+  letter-spacing: 1px;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
+  color: #232D3D;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+.diploma-header1 {
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #232D3D;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.highschool-name {
+  letter-spacing: 1px;
+  color: #998848;
+  font-family: sans-serif;
+  font-size: 13px;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+.highschool-name2 {
+  letter-spacing: 1px;
+  color: #998848;
+  font-family: sans-serif;
+  font-size: 13px;
+  margin-top: 3px;
+  margin-bottom: 50px;
+}
+
+.hackeru-header {
+  letter-spacing: 2px;
+  color: #232D3D;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+
+}
+
+.hackeru {
+  letter-spacing: 1px;
+  color: #998848;
+  font-family: sans-serif;
+  font-size: 13px;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+.my-ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 17px;
+  margin-top: 10px;
+
+}
+
+.my-ul-skills {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
+
+}
+
+li {
+  font-size: 15px;
+  padding: 4px;
+
+}
+
+.li1 {
+  width: 48%;
+  font-size: 14px;
+  padding: 4px;
+
+}
+
+.language-wrap {
+  width: 100%;
+  padding: 3px;
+  border-top: #232D3D 2px solid;
+  border-bottom: #232D3D 2px solid;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.language-header {
+  letter-spacing: 2px;
+  color: #232D3D;
+  font-family: sans-serif;
+  font-size: 14px;
+
+}
+
+.lanuages1 {
+  color: #232D3D;
+  font-size: 12px;
+
+}
+
+
+.english-line {
+  width: 100%;
+  height: 7px;
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.english-inner {
+  width: 97%;
+  height: 7px;
+  background-color: #998848;
+  border-radius: 10px;
+}
+
+.lanuages2 {
+  color: #232D3D;
+  font-size: 12px;
+
+
+}
+
+.hebrew-line {
+  width: 100%;
+  height: 7px;
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.hebrew-line1 {
+  width: 100%;
+  height: 7px;
+  background-color: gray;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hebrew-inner {
+  width: 75%;
+  height: 7px;
+  background-color: #998848;
+  border-radius: 10px;
+}
+.hebrew-inner1 {
+  width: 90%;
+  height: 7px;
+  background-color: #998848;
+  border-radius: 10px;
+}
+
+.mid-sec-wrap {
+  display: flex;
+
+}
+
+.right-side-wrap {
+  width: 60%;
+  padding: 30px 30px 30px 10px;
+
+
+
+}
+
+.personal-bio {
+  color: #232D3D;
+  margin-bottom: 20px;
+  /* font-family: sans-serif; */
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.responsibilities {
+  width: 100%;
+  font-size: 15px;
+}
+
+.my-ul2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 17px;
+  margin-top: 10px;
+
+}
+
+/* bottom wrap */
+.bottom-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left-skills-wrap {
+  width: 50%
+}
+
