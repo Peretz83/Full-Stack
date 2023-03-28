@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Lecturer = require('../models/lecturerModel');
+const joi = require('joi');
+const {Lecturer} = require('../models/lecturerModel');
 
 /*
 * GET http://localhost:3000/api/lecturers
@@ -21,6 +22,37 @@ router.get('/', async (req, res)=>{
     });
   }
 })
+
+/*
+* POST http://localhost:3000/api/lecturers
+*/
+router.post('/', async (req, res)=>{
+ try {
+            const schema = joi.object({
+                fName: joi.string().min(2).max(100).required(),
+                lName: joi.string().min(2).max(100).required(),
+                email: joi.string().unique().max(150).required,
+                phone: joi.string().max(250).min(6).required(),
+                start_date: joi.string().required()
+            });
+
+            const { error, value } = schema.validate(req.body);
+
+            if (error) {
+                console.log(error.details[0].message);
+                throw 'error add lecturer';
+            }
+
+            const lecturer = new Lecturer(value);
+            const newLecturer = await lecturer.save();
+            res.json(newLecturer);
+        }
+        catch (err) {
+            console.log(err.message);
+            res.status(400).json({ error: `error adding lecturer` });
+        }
+      })
+
 
 
 
