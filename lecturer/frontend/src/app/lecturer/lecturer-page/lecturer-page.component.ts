@@ -8,22 +8,5 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LecturerPageComponent {
 
-  addLecturerForm = new FormGroup({
-        title: new FormControl('', {
-            validators: [
-                Validators.required,
-                Validators.minLength(2),
-                Validators.maxLength(256)
-            ]
-        }),
-        description: new FormControl('', {
-            validators: [
-                Validators.minLength(2),
-                Validators.maxLength(1024)
-            ]
-        })
-    })
-onSubmit(){
-  
-}
+ 
 }

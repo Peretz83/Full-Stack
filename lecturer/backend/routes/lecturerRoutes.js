@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const joi = require('joi');
-const {Lecturer} = require('../models/lecturerModel');
+const Lecturer = require('../models/lecturerModel');
 
 /*
 * GET http://localhost:3000/api/lecturers
@@ -31,8 +31,8 @@ router.post('/', async (req, res)=>{
             const schema = joi.object({
                 fName: joi.string().min(2).max(100).required(),
                 lName: joi.string().min(2).max(100).required(),
-                email: joi.string().unique().max(150).required,
-                phone: joi.string().max(250).min(6).required(),
+                email: joi.string().required().email(),
+                phone: joi.string().max(250).min(6),
                 start_date: joi.string().required()
             });
 

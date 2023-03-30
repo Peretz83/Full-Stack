@@ -35,14 +35,7 @@ export class ApiService {
     }
 
     getTasks(): Observable<Array<Task>> {
-        return this.http.get<Array<Task>>(
-            `${this.serverUrl}tasks`,
-            {
-                headers: {
-                    'x-auth-token': this.getToken()
-                }
-            }
-        )
+        return this.GET<Array<Task>>(`tasks`);
     }
 
     addTask(task: Task): Observable<Task> {
@@ -55,12 +48,26 @@ export class ApiService {
     }
 
     addProject(project: Project): Observable<Project> {
-        // return this.http.post<Project>(
-        //     `${this.serverUrl}projects`,
-        //     project,
-        //     { headers: { 'Content-Type': 'application/json' } }
-        // )
         return this.POST<Project>('projects', project);
+    }
+
+    getProjects(): Observable<Array<Project>> {
+        return this.GET<Array<Project>>(`projects`);
+    }
+
+    getOneProject(id: string): Observable<Project> {
+        return this.GET<Project>(`projects/${id}`);
+    }
+
+    GET<DynamicType>(endpoint: string): Observable<DynamicType> {
+        return this.http.get<DynamicType>(
+            `${this.serverUrl}${endpoint}`,
+            {
+                headers: {
+                    'x-auth-token': this.getToken()
+                }
+            }
+        )
     }
 
     POST<DynamicType>(endpoint: string, data: DynamicType): Observable<DynamicType> {
@@ -88,10 +95,35 @@ export class ApiService {
         )
     }
 
+
+    deleteProject(id: string): Observable<Project> {
+        return this.http.delete<Project>(
+            `${this.serverUrl}projects/${id}`,
+            {
+                headers: {
+                    'x-auth-token': this.getToken()
+                }
+            }
+        )
+    }
+
     updateTask(id: string, task: Task): Observable<Task> {
         return this.http.put<Task>(
             `${this.serverUrl}tasks/${id}`,
             task,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-auth-token': this.getToken()
+                }
+            }
+        )
+    }
+
+    updateProject(id: string, project: Project): Observable<Project> {
+        return this.http.put<Project>(
+            `${this.serverUrl}projects/${id}`,
+            project,
             {
                 headers: {
                     'Content-Type': 'application/json',

@@ -5,6 +5,8 @@ import { LoginPageComponent } from './auth/login-page/login-page.component';
 import { SignupPageComponent } from './auth/signup-page/signup-page.component';
 import { AuthService } from './core/auth.service';
 import { HomePageComponent } from './home/home-page/home-page.component';
+import { AddProjectComponent } from './projects/add-project/add-project.component';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component';
 import { ProjectPageComponent } from './projects/project-page/project-page.component';
 import { TaskPageComponent } from './tasks/task-page/task-page.component';
 
@@ -20,6 +22,8 @@ const routes: Routes = [
         canActivateChild: [AuthService],
         children: [
             { path: 'projects', component: ProjectPageComponent },
+            { path: 'add-project', component: AddProjectComponent },
+            { path: 'edit-project/:id', component: EditProjectComponent },
             { path: 'tasks', component: TaskPageComponent, },
         ]
     },

@@ -40,8 +40,9 @@ module.exports = {
         try {
             const schema = joi.object({
                 title: joi.string().min(2).max(256).required(),
-                description: joi.string().min(2).max(1024).required(),
-                complete: joi.boolean(),
+                description: joi.string().min(2).max(1024),
+                status: joi.string().required(),
+                image: joi.string().allow(null, '')
             });
 
             const { error, value } = schema.validate(req.body);
@@ -66,7 +67,8 @@ module.exports = {
             const schema = joi.object({
                 title: joi.string().min(2).max(256).required(),
                 description: joi.string().min(2).max(1024).required(),
-                complete: joi.boolean(),
+                status: joi.string().required(),
+                image: joi.string().allow(null, '')
             }).min(1);
 
             const { error, value } = schema.validate(req.body);
@@ -87,7 +89,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err.message);
-            res.status(400).json({ error: `error updating details` });
+            res.status(400).json({ error: err.message });
         }
     },
 

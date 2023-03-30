@@ -1,1 +1,29 @@
-<p>home-page works!</p>
+<h1>Our Lecturers</h1>
+
+
+
+<form [formGroup]="addLecturerForm" (ngSubmit)="onSubmit()" class="row mb-4">
+  <div class="col-4">
+    <input formControlName="fName" type="text" class="form-control" placeholder="First Name">
+  </div>
+  <div class="col-4">
+    <input formControlName="lName" type="text" class="form-control" placeholder="Last Name">
+  </div>
+  <div class="col-4">
+    <input formControlName="email" type="text" class="form-control" placeholder="Email">
+  </div>
+  <div class="col-4">
+    <input formControlName="phone" type="text" class="form-control" placeholder="Phone">
+  </div>
+  <div class="col-4">
+    <select formControlName="start_date" class="form-control">
+      <option>
+        Choose an option
+      </option>
+      <option *ngFor="let options of experienceOptions">{{options}}</option>
+    </select>
+  </div>
+  <div class="col-2">
+    <button [disabled]="addLecturerForm.invalid" type="submit" class="btn btn-primary">Add</button>
+  </div>
+</form>

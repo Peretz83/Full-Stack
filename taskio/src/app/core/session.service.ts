@@ -9,6 +9,6 @@ export class SessionService {
     constructor(private router: Router) { }
 
     redirectToHome() {
-        this.router.navigate(['home']);
+        // this.router.navigate(['home']);
     }
 }
