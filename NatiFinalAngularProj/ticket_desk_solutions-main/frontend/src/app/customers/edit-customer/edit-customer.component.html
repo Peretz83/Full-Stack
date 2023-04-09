@@ -1,0 +1,44 @@
+<app-ticket-navbar></app-ticket-navbar>
+
+<app-sidebar></app-sidebar>
+
+<div class="main-wrap">
+
+<app-title [icon]="sectionIcon" [text]="sectionTitle"></app-title>
+
+<app-notifications [text]="text" (buttonClicked)="notificationClosed($event)" [showNotification]="showNotification"></app-notifications>
+
+<form [formGroup]="editCustomerForm" (ngSubmit)="onSubmit()" class="row mb-4">
+   <div class="col-11 m-3">
+    <label for="fName">First name</label>
+    <input formControlName="fName" type="text" class="form-control" placeholder="First Name">
+  </div>
+  <div class="col-11 m-3">
+    <label for="lName">Last name</label>
+    <input formControlName="lName" type="text" class="form-control" placeholder="Last Name">
+  </div>
+  <div class="col-11 m-3">
+    <label for="email">Email</label>
+    <input formControlName="email" type="text" class="form-control" placeholder="Email">
+  </div>
+  <div class="col-11 m-3">
+    <label for="phone">Phone</label>
+    <input formControlName="phone" type="text" class="form-control" placeholder="Phone">
+  </div>
+  <div class="col-11 m-3">
+    <label for="address">Address</label>
+    <input formControlName="address" type="text" class="form-control" placeholder="Address">
+  </div>
+    <div class="mb-3">
+      <a routerLink="/customers">
+      <button type="button" class="btn btn-secondary cancel-btn">
+        Cancel
+      </button>
+      </a>
+        <button [disabled]="editCustomerForm.invalid" type="submit" class="btn btn-primary edit-btn">
+            Edit Project
+        </button>
+    </div>
+</form>
+
+</div>

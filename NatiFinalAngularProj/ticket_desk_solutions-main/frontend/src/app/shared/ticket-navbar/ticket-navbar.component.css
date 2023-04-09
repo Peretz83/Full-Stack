@@ -1,0 +1,233 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-wrap{
+  background-color: rgb(210, 208, 208);
+  height: 3rem;
+  margin-left: 5rem;
+}
+
+.topbar{
+  background-color: white;
+  /* background-color: red; */
+  position: fixed;
+  top: 0;
+  left: 5rem;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem;
+}
+
+.ticket-sort{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  /* background-color: pink; */
+}
+
+.sortIcon{
+  width: 2rem;
+  height: 2rem;
+  border-radius: .2rem;
+  background-color: rgb(226, 226, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  border: 1px solid gray;
+}
+
+.sortIcon:hover{
+  background-color: rgb(210, 208, 208);
+  cursor: pointer;
+}
+
+.add-a-new{
+  background-color:#EBEFF3;
+  width: 6rem;
+  border-radius: .3rem;
+  border: 1px solid gray;
+  height: 2rem;
+}
+
+.add-a-new:hover{
+  background-color:  #e2e2e2;
+}
+
+.plusBtn{
+  margin-right: .2rem;
+}
+
+.ticket-search{
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: yellow; */
+  padding: 2px;
+  width: 30rem;
+  align-items: center;
+}
+
+.search-input{
+  width: 6rem;
+  border-radius: .2rem;
+  outline: none;
+  border: 1px solid gray;
+  padding: .2rem .2rem .2rem 1rem;
+  margin-right: 1rem;
+}
+
+.search-input:focus{
+  width: 14.5rem;
+  border-radius: .2rem;
+  padding: .2rem .2rem .2rem 1rem;
+  outline: 1px solid blue;
+}
+
+/* .searchIcon{
+  background-color: white;
+} */
+
+.btn-seperator{
+  transform: rotate(90deg);
+  width: 2rem;
+  color: black;
+}
+
+.topbar-ul{
+  list-style-type: none;
+  display: flex;
+  /* background-color: blue; */
+  padding: 2px;
+  width: 20rem;
+  margin-left: 2rem;
+}
+
+.topbar-li{
+  /* background-color: purple; */
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.topbar-li:hover{
+  cursor: pointer;
+
+}
+
+.avatar{
+  background-color: goldenrod;
+  width: 3rem;
+  border-radius: .2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+}
+
+.avatar:hover{
+  cursor: pointer;
+}
+
+
+.acc-dropdown{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dropdown-wrap{
+  position: absolute;
+  background-color: #EBEFF3;
+  top: 2.5rem;
+  right: 1rem;
+  width: 15rem;
+  box-shadow: 2px 3px 15px 1px rgb(168, 168, 168);
+}
+
+.acc-dropdown2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dropdown-wrap2{
+  position: absolute;
+  background-color: white;
+  top: 2.5rem;
+  right: 1rem;
+  width: 12rem;
+  box-shadow: 2px 3px 15px 1px rgb(168, 168, 168);
+  padding: 1rem;
+}
+
+.addLinks{
+  margin: .5rem;
+  padding: .3rem;
+  border-radius: .5rem;
+}
+
+.addLinks:hover{
+  margin: .5rem;
+  background-color: rgb(222, 222, 222);
+}
+
+.logoutTd{
+  cursor: pointer;
+  padding: .2rem;
+  border-radius: .5rem;
+}
+
+.logoutTd:hover{
+  cursor: pointer;
+  background-color: rgb(222, 222, 222);
+}
+
+table{
+  width: 100%;
+}
+
+thead{
+  height: 4rem;
+
+}
+
+tbody{
+  height: 5rem;
+
+}
+
+th{
+  background-color: #EBEFF3;
+  padding: .5rem;
+}
+tr{
+  background-color: white;
+
+}
+
+td{
+  padding: .5rem;
+}
+
+.emailDropdown{
+  font-weight: 400;
+  font-size: .8rem;
+  color: rgb(116, 116, 116);
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}

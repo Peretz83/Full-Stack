@@ -1,0 +1,11 @@
+.errs{
+  /* background-color: purple; */
+  padding: .3rem;
+  display: flex;
+  color: red;
+}
+
+.msg{
+  /* background-color: red; */
+  margin-left: 1rem;
+}

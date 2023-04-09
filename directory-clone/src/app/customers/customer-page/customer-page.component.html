@@ -1,0 +1,58 @@
+<h2 class="my-4 py-4">
+    Customers
+    <small class="text-secondary">
+        ({{ customerTotal() }})
+    </small>
+</h2>
+
+<app-notification (buttonClicked)="notificationClosed($event)" [showNotification]="showNotification"></app-notification>
+
+<div class="section-bg p-3">
+    <div class="d-flex justify-content-end">
+        <div>
+            <button (click)="toggleForm()" class="btn btn-primary">
+                <i class="fa fa-user-plus pe-2"></i>
+                Toggle Add Customer
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="showForm">
+        <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input formControlName="name" type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input formControlName="email" type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input formControlName="phone" type="text" class="form-control" id="phone">
+            </div>
+            <button [disabled]="customerForm.invalid" type="submit" class="btn btn-primary">
+                Add
+            </button>
+        </form>
+    </div>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th class="align-middle">Name</th>
+                <th class="align-middle">Email</th>
+                <th class="align-middle">Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers;index as i">
+                <td>{{i+1}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,79 @@
+<app-ticket-navbar></app-ticket-navbar>
+
+<app-sidebar></app-sidebar>
+
+<div class="main-wrap">
+
+  <app-title [icon]="sectionIcon" [text]="sectionTitle"></app-title>
+
+  <div class="top-opt-sec">
+    <button class="reply-btn"><i class="bi bi-arrow-90deg-left"></i>Reply</button>
+    <button class="forward-btn"><i class="bi bi-arrow-90deg-right"></i>Forward</button>
+    <button class="close-btn"><i class="bi bi-check2-circle"></i>Close</button>
+    <button class="delete-btn"><i class="bi bi-trash"></i>Delete</button>
+  </div>
+
+  <div class="main-sec">
+
+    <div class="left-msg-side">
+
+      <h2 class="status-header">{{ticket?.status}}</h2>
+
+      <hr>
+
+      <h1 class="new-msg-header"><i class="bi bi-envelope"></i> New customer message</h1>
+
+  <table class="table table-striped myTable">
+  <tbody class="mytbody">
+    <tr class="mytr">
+      <td class="mytd">
+        <div>
+          <b>Name:</b>
+        <p>test</p>
+        </div>
+        <div>
+          <b>Email:</b>
+        <p>test@gmail.com</p>
+        </div>
+        <div>
+          <b>Phone:</b>
+        <p>5454545454</p>
+        </div>
+        <div>
+          <b>Message:</b>
+        <p>{{ticket?.message}}</p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+
+
+    <div class="right-filter-side">
+      <form>
+        <div class="filter-divs">
+          <label for="">Agent</label>
+        <select>
+          <option></option>
+        </select>
+        </div>
+        <div class="filter-divs">
+          <label for="">Status</label>
+        <select>
+          <option></option>
+        </select>
+        </div>
+        <div class="filter-divs">
+          <label for="">Priority</label>
+        <select>
+          <option></option>
+        </select>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>

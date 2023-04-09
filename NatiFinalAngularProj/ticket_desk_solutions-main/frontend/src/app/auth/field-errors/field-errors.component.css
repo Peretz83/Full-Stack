@@ -1,0 +1,8 @@
+.errs{
+  display: flex;
+  justify-content: center;
+}
+
+.msg{
+  margin-left: .5rem;
+}

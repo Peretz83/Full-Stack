@@ -1,0 +1,42 @@
+.main-wrap {
+  background-color: #EBEFF3;
+  height: 100vh;
+  margin-left: 5rem;
+  padding: 2rem;
+}
+
+
+select{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+option{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+tr {
+  border: .5px solid rgb(214, 214, 214);
+  border-left: none;
+  border-right: none;
+}
+
+table {
+  background-color: white;
+  border-radius: .5rem;
+}
+
+td {
+  padding: 1rem;
+}
+
+thead {
+  padding: 1rem;
+  height: 4rem;
+  background-color: #F5F7F9;
+
+}
+

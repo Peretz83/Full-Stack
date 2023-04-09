@@ -1,0 +1,49 @@
+<app-ticket-navbar></app-ticket-navbar>
+
+<app-sidebar></app-sidebar>
+
+<div class="main-wrap">
+
+  <app-title [icon]="sectionIcon" [text]="sectionTitle"></app-title>
+
+  <form [formGroup]="editTicketForm" (ngSubmit)="onSubmit()">
+    <table class="table table-hover">
+      <thead class="thead">
+        <th>Ticket ID</th>
+        <th>Subject</th>
+        <th>Created At</th>
+        <th>Agent</th>
+        <th>Priority</th>
+        <th>Status</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of tickets">
+          <td >{{ticket.ticketId}}</td>
+          <td ><a routerLink="/selectedTicket/{{ticket._id}}">{{ticket.subject}}</a></td>
+          <td >{{ticket.createdAt | date}}</td>
+          <td>
+            <select formControlName="agent" >
+              <option>{{ticket.agent}}</option>
+              <option *ngFor="let agent of agents">{{agent}}</option>
+            </select>
+          </td>
+          <td>
+            <select formControlName="priority">
+              <option>{{ticket.priority}}</option>
+              <option *ngFor="let priority of priorityOptions">{{priority}}</option>
+            </select>
+          </td>
+          <td>
+            <select formControlName="status">
+              <option>{{ticket.status}}</option>
+              <option *ngFor="let status of statusOptions">{{status}}</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</form>
+
+</div>
+
+

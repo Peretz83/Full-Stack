@@ -1,0 +1,60 @@
+<div class="main-wrap">
+<nav class="topbar">
+  <div class="ticket-sort">
+    <i class="fa-solid fa-filter sortIcon"></i>
+    All tickets
+  </div>
+  <div class="ticket-search">
+
+    <div class="acc-dropdown2">
+    <button (click)="toggleAcc2()" class="add-a-new">
+      <i class="fa-regular fa-square-plus plusBtn"></i>
+      New
+    </button>
+    <div class="dropdown-wrap2" *ngIf="showForm2">
+      <a routerLink="/newTicket">
+          <div class="addLinks">New ticket</div>
+          </a>
+          <a routerLink="/customers">
+          <div class="addLinks">New customer</div>
+          </a>
+          <a routerLink="/employees">
+          <div class="addLinks">New employee</div>
+          </a>
+    </div>
+    </div>
+    <hr class="btn-seperator">
+
+    <ul class="topbar-ul">
+      <li  class="topbar-li">
+        <input type="text" placeholder="Search" class="search-input">
+      </li>
+      <li class="topbar-li">
+        <i class="fa-solid fa-bell"></i>
+      </li>
+    </ul>
+
+    <div class="acc-dropdown">
+    <div  (click)="toggleAcc()" class="avatar">N</div>
+    <div class="dropdown-wrap" *ngIf="showForm">
+          <table>
+            <thead>
+              <tr>
+                <th>Nati Peretz</th>
+              </tr>
+              <tr>
+                <th class="emailDropdown">nat@gmial.com</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td > <p class="logoutTd" (click)="logout()">Sign out</p> </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    </div>
+
+  </div>
+</nav>
+</div>

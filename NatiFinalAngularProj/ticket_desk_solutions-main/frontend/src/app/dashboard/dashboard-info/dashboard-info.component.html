@@ -1,0 +1,46 @@
+<div class="dash-info-wrap">
+
+<div class="info-wrap">
+  <table class="table table-hover">
+    <thead class="thead">
+      <th>All customers</th>
+    </thead>
+    <tbody >
+      <tr>
+        <td class="myTd">Total customers <a routerLink="/customers"><span>{{customers.length}}</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="info-wrap">
+  <table class="table table-hover">
+    <thead class="thead">
+      <th>Available employees</th>
+    </thead>
+    <tbody >
+      <tr>
+        <td class="myTd">Admins <a routerLink="/employees"><span>2</span></a></td>
+      </tr>
+      <tr>
+        <td class="myTd">Employees <a routerLink="/employees"><span>{{employees.length}}</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="info-wrap">
+  <table class="table table-hover">
+    <thead class="thead">
+      <th>All tickets</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="myTd">Total tickets <a routerLink="/portalHome"><span>{{tickets.length}}</span></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>

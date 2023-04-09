@@ -1,0 +1,10 @@
+.notificationAlert{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.childDiv{
+  width: 15rem;
+  background-color: #29d392;
+}

@@ -1,0 +1,52 @@
+<!-- <app-navbar></app-navbar> -->
+
+<app-notifications [text]="text" (buttonClicked)="notificationClosed($event)" [showNotification]="showNotification">
+</app-notifications>
+
+<div class="signupForm-wrap">
+
+
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signupForm">
+
+    <h3 class="signup-header">Sign up for a new Ticket Desk Solutions account</h3>
+
+    <div class="name-wrap">
+      <label for="name" class="name-label">Name</label>
+      <input #nameFieldRef formControlName="name" type="text" class="name-input" id="name">
+    </div>
+
+    <app-field-errors [formField]="getFieldControl('name')"></app-field-errors>
+
+    <div class="email-wrap">
+      <label for="email" class="email-label">Email</label>
+      <input formControlName="email" type="text" class="email-input" id="email">
+    </div>
+
+    <app-field-errors [formField]="getFieldControl('email')"></app-field-errors>
+
+    <div class="password-wrap">
+      <label for="password" class="password-label">Password</label>
+      <input formControlName="password" type="password" class="password-input" id="password">
+    </div>
+
+    <app-field-errors [formField]="getFieldControl('password')"></app-field-errors>
+
+    <div class="confirm_password-wrap">
+      <label for="confirm_password" class="confirm_password-label">Confirm password</label>
+      <input formControlName="confirm_password" type="password" class="confirm_password-input" id="confirm_password">
+    </div>
+
+    <app-field-errors [formField]="getFieldControl('confirm_password')"></app-field-errors>
+
+    <hr>
+
+    <div class="btn-wrap">
+      <button [disabled]="signupForm.invalid" type="submit" class="signup-btn">SIGN UP</button>
+    </div>
+
+    <div class="err-msgs">{{errs.message}}</div>
+
+  </form>
+
+</div>

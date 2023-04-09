@@ -1,0 +1,16 @@
+.main-wrap {
+  margin-left: 5rem;
+  padding: 2rem;
+  height: 100vh;
+  background-color: #EBEFF3;
+}
+
+.add-btn{
+  background-color: #12344D;
+}
+
+.cancel-btn{
+  background-color: rgb(224, 224, 224);
+  margin-right: 1rem;
+  color: black;
+}

@@ -1,0 +1,129 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loginForm-wrap{
+  background-color: #F3F5F7;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+
+.loginForm{
+  /* background-color: red; */
+  width: 40rem;
+    background-color: white;
+    padding: 5rem 6rem 5rem 6rem;
+    border-radius: .5rem 0rem 0rem .5rem;
+    box-shadow: 1px 1px 1px .5px rgb(199, 199, 199);
+    border: 1px solid rgb(199, 199, 199);
+    border-right: none;
+}
+
+.login-header {
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+
+.email-wrap,
+.password-wrap {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: blue; */
+  margin-bottom: 2rem;
+}
+
+
+.email-input,
+.password-input {
+  width: 75%;
+  height: 2.1rem;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: .2rem;
+  outline: none;
+  padding-left: 1rem;
+}
+
+
+.email-input:focus,
+.password-input:focus {
+  box-shadow: 0px 0px 10px 0px #22cf8d;
+}
+
+.btn-wrap {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.login-btn {
+  width: 14rem;
+  background-color: #22cf8d;
+  color: white;
+  border: 1px solid black;
+  padding: .3rem 1rem .3rem 1rem;
+  font-weight: bold;
+  letter-spacing: .1rem;
+  font-size: .8rem;
+}
+
+.login-btn:hover {
+  background-color: #3ae3a3;
+  cursor: pointer;
+}
+
+.login-signup-wrap{
+  display: flex;
+}
+
+.signup-sec{
+  background-color: rgb(232, 232, 232);
+  width: 20rem;
+  border-radius: 0rem .5rem .5rem 0rem;
+  box-shadow: 1px 1px 1px .5px rgb(199, 199, 199);
+  border: 1px solid rgb(199, 199, 199);
+  padding: 2rem
+}
+
+.signup-btn {
+  background-color: #E4E8ED;
+  border: 1px solid black;
+  padding: .3rem 1rem .3rem 1rem;
+  font-weight: bold;
+  font-size: .8rem;
+  margin-bottom: 1rem;
+}
+
+.signup-btn:hover {
+  background-color: #d4d4d4;
+}
+
+.signup-header{
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+
+.signup-text{
+  font-size: .8rem;
+  color: #727272;
+}
+
+.err-msgs {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  color: red;
+}
+
+

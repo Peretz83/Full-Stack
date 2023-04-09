@@ -1,0 +1,50 @@
+<app-ticket-navbar></app-ticket-navbar>
+
+<app-sidebar></app-sidebar>
+
+<div class="main-wrap">
+
+<app-title [icon]="sectionIcon" [text]="sectionTitle"></app-title>
+
+<app-notifications [text]="text" (buttonClicked)="notificationClosed($event)" [showNotification]="showNotification"></app-notifications>
+
+<app-search-page></app-search-page>
+
+<div class="link-center">
+<a class="text-center" routerLink="/employees">
+    Clear search
+    </a>
+</div>
+
+ <div class="mycontainer">
+<form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()" class="row mb-4">
+
+  <div class="col-2 m-3">
+    <input formControlName="name" type="text" class="form-control" placeholder="Name">
+    <app-field-validation [formField]="getFieldControl('name')"></app-field-validation>
+  </div>
+  <div class="col-2 m-3">
+    <input formControlName="email" type="text" class="form-control" placeholder="Email">
+    <app-field-validation [formField]="getFieldControl('email')"></app-field-validation>
+  </div>
+  <div class="col-2 m-3">
+    <input formControlName="phone" type="text" class="form-control" placeholder="Phone">
+    <app-field-validation [formField]="getFieldControl('phone')"></app-field-validation>
+  </div>
+  <div class="col-2 m-3">
+    <input formControlName="bDay" type="date" class="form-control" placeholder="Birthday">
+    <app-field-validation [formField]="getFieldControl('bDay')"></app-field-validation>
+  </div>
+
+  <div class="w-100 d-flex justify-content-center">
+    <button [disabled]="addEmployeeForm.invalid" type="submit" class="btn w-25 emp-btn"><i class="bi bi-plus-circle-fill"></i>Add employee</button>
+
+  </div>
+</form>
+</div>
+
+
+<app-employee-display></app-employee-display>
+
+</div>
+

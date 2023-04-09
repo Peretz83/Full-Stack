@@ -1,0 +1,21 @@
+.footer-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #12344D;
+  color: rgb(228, 227, 227);
+  height: 4rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0rem;
+}
+
+.footer-text{
+  font-size: .8rem;
+}
+
+span{
+  font-size: .7rem;
+  color: rgba(228, 227, 227, 0.816);
+}

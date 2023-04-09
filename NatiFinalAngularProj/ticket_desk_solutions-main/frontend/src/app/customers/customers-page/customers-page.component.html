@@ -1,0 +1,87 @@
+<app-ticket-navbar></app-ticket-navbar>
+
+<app-sidebar></app-sidebar>
+
+<div class="main-wrap">
+
+<app-notifications [text]="text" (buttonClicked)="notificationClosed($event)" [showNotification]="showNotification"></app-notifications>
+
+<app-title [icon]="sectionIcon" [text]="sectionTitle"></app-title>
+
+
+
+<form [formGroup]="addcustomerForm" (ngSubmit)="onSubmit()" class="row mb-4">
+
+  <div class="input-wrap" >
+  <div class="controls-wrap">
+
+      <input formControlName="fName" type="text" placeholder="First Name">
+
+    <app-field-validation [formField]="getFieldControl('fName')"></app-field-validation>
+  </div>
+
+  <div class="controls-wrap">
+    <input formControlName="lName" type="text"  placeholder="Last Name">
+  <app-field-validation [formField]="getFieldControl('lName')"></app-field-validation>
+  </div>
+
+  <div class="controls-wrap">
+    <input formControlName="email" type="text"  placeholder="Email">
+  <app-field-validation [formField]="getFieldControl('email')"></app-field-validation>
+</div>
+
+  <div class="controls-wrap">
+    <input formControlName="phone" type="text"  placeholder="Phone">
+  <app-field-validation [formField]="getFieldControl('phone')"></app-field-validation>
+  </div>
+
+  <div class="controls-wrap">
+    <input formControlName="address" type="text"  placeholder="Address">
+    <app-field-validation [formField]="getFieldControl('address')"></app-field-validation>
+</div>
+  </div>
+
+  <div class="w-100 d-flex justify-content-center">
+    <button [disabled]="addcustomerForm.invalid" type="submit" class="btn btn-primary w-25 cust-btn"><i class="bi bi-plus-circle-fill"></i>Add customer</button>
+  </div>
+
+</form>
+
+
+<table class="table table-hover">
+  <thead>
+    <th>No.</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers; let i = index" >
+      <td> <span>{{i+1}}</span>
+        <span>
+        <i routerLink="/selectedCustomer/{{customer._id}}" class="bi bi-eye text-success"></i>
+        </span>
+        <span>
+        <i routerLink="/edit-customer/{{customer._id}}" class="bi bi-pencil text-primary"></i>
+        </span>
+        <span>
+        <i (click)="onDelete(customer)" class="bi bi-trash text-danger"></i>
+        </span>
+      </td>
+      <td >{{customer.fName}} </td>
+      <td >{{customer.lName}} </td>
+      <td >{{customer.email}} </td>
+      <td >{{customer.phone}} </td>
+      <td >{{customer.address}} </td>
+
+
+
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+

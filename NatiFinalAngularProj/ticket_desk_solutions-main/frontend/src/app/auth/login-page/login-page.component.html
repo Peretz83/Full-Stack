@@ -1,0 +1,49 @@
+<!-- <app-navbar></app-navbar> -->
+
+<app-notifications [text]="text" (buttonClicked)="notificationClosed($event)" [showNotification]="showNotification"></app-notifications>
+
+<div class="loginForm-wrap">
+
+  <div class="login-signup-wrap">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+
+    <h3 class="login-header">Login to the support portal</h3>
+
+      <div class="email-wrap">
+          <label for="email" class="email-label">Email</label>
+          <input #emailFieldRef formControlName="email" type="text" class="email-input" id="email">
+      </div>
+
+      <app-field-errors [formField]="getFieldControl('email')"></app-field-errors>
+
+      <div class="password-wrap">
+          <label for="password" class="password-label">Password</label>
+          <input formControlName="password" type="password" class="password-input" id="password">
+      </div>
+
+      <app-field-errors [formField]="getFieldControl('password')"></app-field-errors>
+
+      <hr>
+
+      <div class="btn-wrap">
+      <button [disabled]="loginForm.invalid" type="submit" class="login-btn">LOGIN</button>
+      </div>
+
+      <div class="err-msgs">{{errs.status}}</div>
+
+  </form>
+
+   <div class="signup-sec">
+    <h2 class="signup-header">Sign up</h2>
+    <button routerLink="/signup" class="signup-btn">SIGN UP WITH US</button>
+    <p class="signup-text">
+      Once you sign up, you will have complete access to our self service portal and you can use your account to raise support tickets and track their status.
+    </p>
+   </div>
+
+  </div>
+
+
+</div>
+
+

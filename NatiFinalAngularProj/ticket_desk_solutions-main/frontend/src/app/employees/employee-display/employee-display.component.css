@@ -1,0 +1,23 @@
+table{
+  background-color: white;
+  border-radius: .5rem;
+}
+
+td{
+  padding: 1rem;
+}
+
+thead{
+  padding: 1rem;
+  height: 4rem;
+  background-color: #F5F7F9;
+
+}
+
+span {
+  margin-left: 1.5rem;
+}
+
+i{
+  cursor: pointer;
+}

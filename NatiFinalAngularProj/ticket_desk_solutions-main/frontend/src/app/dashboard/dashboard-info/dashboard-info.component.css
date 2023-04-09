@@ -1,0 +1,37 @@
+.info-wrap{
+  background-color: white;
+  width: 25rem;
+  height: 20rem;
+  margin: 1rem;
+}
+
+.thead{
+  background-color: #F5F7F9;
+  border-bottom: 1px solid rgb(211, 211, 211);
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+}
+
+.myTd{
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+}
+
+.dash-info-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+span{
+  color: blue;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+}

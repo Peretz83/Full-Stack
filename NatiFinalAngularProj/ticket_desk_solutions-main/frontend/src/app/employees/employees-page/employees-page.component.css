@@ -1,0 +1,36 @@
+.main-wrap{
+  margin-left: 5rem;
+  padding: 2rem;
+  background-color:#EBEFF3;
+}
+
+.link-center{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.mycontainer{
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+
+form{
+  /* background-color: green; */
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  /* background-color: red; */
+}
+
+
+
+.emp-btn{
+  background-color: #12344D;
+  color: white;
+}
+
+i{
+    margin-right: 1rem;
+}
