@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/core/api.service';
 
 @Component({
   selector: 'app-login-page',
@@ -15,11 +17,31 @@ export class LoginPageComponent {
             validators: [Validators.required, Validators.minLength(6)]
         })
     })
- onSubmit() {
-        if (this.loginForm.invalid) {
-            return;
-        }
+    constructor(private api:ApiService, private router:Router){
+
+    }
+onSubmit() {
+    if(this.loginForm.invalid){
+      return;
+    }
+
+    this.api.login(this.loginForm.value).subscribe({
+      next: (data) => { 
+
+         if (data.token) this.api.setToken(data.token)
+
+          this.router.navigate(['dashboard']);
+      
+
+
+      },
+      error: (err) => {
+        console.log(err.error)
+     
+
       }
+    })
+  }
 
        getFieldControl(field: string): FormControl {
         return this.loginForm.get(field) as FormControl;
