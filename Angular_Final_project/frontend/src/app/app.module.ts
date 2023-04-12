@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { CustomersModule } from './customers/customers.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import { EmployeesModule } from './employees/employees.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -20,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     EmployeesModule,
     CustomersModule,
-    SharedModule
+    SharedModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

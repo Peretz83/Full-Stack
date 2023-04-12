@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-page.component.css']
 })
 export class DashboardPageComponent {
+  
+  title = 'Dashboard'
+  icon = 'bi bi-graph-up'
+
 
 }

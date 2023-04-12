@@ -18,7 +18,8 @@ import { RouterLink } from '@angular/router';
     RouterLink
   ],
   exports:[
-    NavbarComponent
+    NavbarComponent,
+    TitleComponent
   ]
 })
 export class SharedModule { }

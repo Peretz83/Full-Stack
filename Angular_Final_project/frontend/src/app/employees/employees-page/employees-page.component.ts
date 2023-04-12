@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./employees-page.component.css']
 })
 export class EmployeesPageComponent {
+  title = 'Employees'
+  icon = 'bi bi-briefcase-fill'
 
 }
