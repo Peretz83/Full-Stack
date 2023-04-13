@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead class="thead">
+    <th>No.</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Birthday</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; let i = index" >
+       <td> <span>{{i+1}}</span>
+      </td>
+      <td >{{employee.name}} </td>
+      <td >{{employee.email}} </td>
+      <td >{{employee.phone}} </td>
+      <td >{{employee.bDay}} <span>
+        <i (click)="onDelete(employee)" class="bi bi-trash text-danger"></i>
+        </span></td>
+    </tr>
+  </tbody>
+</table>

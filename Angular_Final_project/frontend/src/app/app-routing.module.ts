@@ -15,7 +15,8 @@ const routes: Routes = [
   {path:"edit-customer/:id",component:EditCustomerComponent},
   {path:"selected-customer/:id",component:SelectedCustomerComponent},
   {path:"employees",component:EmployeesPageComponent},
-  {path:"dashboard",component:DashboardPageComponent}
+  {path:"dashboard",component:DashboardPageComponent},
+  {path: 'search/:searchTerm', component: EmployeesPageComponent}
 ];
 
 @NgModule({

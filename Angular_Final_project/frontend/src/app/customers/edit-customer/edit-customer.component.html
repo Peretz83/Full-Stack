@@ -1,1 +1,32 @@
-<p>edit-customer works!</p>
+<form [formGroup]="editCustomerForm" (ngSubmit)="onSubmit()" class="row mb-4">
+   <div class="col-11 m-3">
+    <label for="fname">First name</label>
+    <input formControlName="fname" type="text" class="form-control" placeholder="First Name">
+  </div>
+  <div class="col-11 m-3">
+    <label for="lname">Last name</label>
+    <input formControlName="lname" type="text" class="form-control" placeholder="Last Name">
+  </div>
+  <div class="col-11 m-3">
+    <label for="email">Email</label>
+    <input formControlName="email" type="text" class="form-control" placeholder="Email">
+  </div>
+  <div class="col-11 m-3">
+    <label for="phone">Phone</label>
+    <input formControlName="phone" type="text" class="form-control" placeholder="Phone">
+  </div>
+  <div class="col-11 m-3">
+    <label for="address">Address</label>
+    <input formControlName="address" type="text" class="form-control" placeholder="Address">
+  </div>
+    <div class="mb-3">
+      <a routerLink="/customers">
+      <button type="button" class="btn btn-secondary cancel-btn">
+        Back to Customer Page
+      </button>
+      </a>
+        <button [disabled]="editCustomerForm.invalid" type="submit" class="btn btn-primary edit-btn">
+            Edit Customer
+        </button>
+    </div>
+</form>

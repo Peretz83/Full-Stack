@@ -6,6 +6,8 @@ const app = express();
 const port = process.env.MY_PORT;
 app.use(express.json());
 const userRouter = require('./routes/userRoutes');
+const customerRouter = require('./routes/customerRoutes');
+const employeeRouter = require('./routes/employeeRoutes');
 
 const cors = require('cors');
 mongoose.set('strictQuery', true);
@@ -37,6 +39,8 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/users', userRouter);
+app.use('/api/customers', customerRouter);
+app.use('/api/employees', employeeRouter);
 
 
 app.listen(port, ()=>console.log(`Listening to port http://localhost:${port}/api/users`))

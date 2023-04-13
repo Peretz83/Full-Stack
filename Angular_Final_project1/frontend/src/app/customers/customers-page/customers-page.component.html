@@ -1,0 +1,37 @@
+<app-title [icon]="icon" [title]="title"></app-title>
+
+
+<div class="form-wrap">
+  <form [formGroup]="addCustomerForm" (ngSubmit)="onSubmit()" class="addCustomerForm">
+    <div class="mb-3">
+      <!-- <label for="fname" class="form-label">First Name:</label> -->
+      <input formControlName="fname" type="text" class="form-control" id="fname" placeholder="First Name">
+    </div>
+    <app-field-errors [formField]="getFieldControl('fname')"></app-field-errors>
+    <div class="mb-3">
+      <!-- <label for="lname" class="form-label">Last Name:</label> -->
+      <input formControlName="lname" type="text" class="form-control" id="lname" placeholder="Last Name">
+    </div>
+    <app-field-errors [formField]="getFieldControl('lname')"></app-field-errors>
+    <div class="mb-3">
+      <!-- <label for="phone" class="form-label">Phone Number:</label> -->
+      <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="Phone Number">
+    </div>
+    <app-field-errors [formField]="getFieldControl('phone')"></app-field-errors>
+    <div class="mb-3">
+      <!-- <label for="email" class="form-label">Email:</label> -->
+      <input formControlName="email" type="text" class="form-control" id="email" placeholder="Example@email.com">
+    </div>
+    <app-field-errors [formField]="getFieldControl('email')"></app-field-errors>
+    <div class="mb-3">
+      <!-- <label for="address" class="form-label">Address:</label> -->
+      <input formControlName="address" type="text" class="form-control" id="address">
+    </div>
+    <app-field-errors [formField]="getFieldControl('address')"></app-field-errors>
+
+    <div class="btn-wrap">
+      <button [disabled]="addCustomerForm.invalid" type="submit" class="btn btn-primary btn-lg h-2 pb-4">
+        <i class="bi bi-person-plus-fill"></i> Add </button>
+    </div>
+  </form>
+</div>

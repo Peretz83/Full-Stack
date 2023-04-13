@@ -1,0 +1,27 @@
+<h1 class="text-center">E <i class="bi bi-award text-primary"></i>CRM</h1>
+<h5 class="text-center">Login with your account credentials</h5>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="col-6 m-auto">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input formControlName="name" type="text" class="form-control" id="name" placeholder="Name">
+  </div>
+  <app-field-errors [formField]="getFieldControl('name')"></app-field-errors>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input formControlName="email" type="text" class="form-control" id="email" placeholder="Example@email.com">
+  </div>
+  <app-field-errors [formField]="getFieldControl('email')"></app-field-errors>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input formControlName="password" type="password" class="form-control" id="password">
+  </div>
+  <app-field-errors [formField]="getFieldControl('password')"></app-field-errors>
+  <div class="mb-3">
+    <label for="confirm_password" class="form-label">Confirm Password:</label>
+    <input formControlName="confirm_password" type="password" class="form-control" id="confirm_password">
+  </div>
+  <app-field-errors [formField]="getFieldControl('confirm_password')"></app-field-errors>
+  <button [disabled]="signupForm.invalid" type="submit" class="btn btn-primary btn-lg">
+    Sign Up </button>
+</form>

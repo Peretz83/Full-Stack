@@ -1,0 +1,11 @@
+div{
+  width: 100%;
+  background-color: lightgrey;
+  font-size: 3rem;
+  padding: .8rem;
+  border-radius: .5rem;
+}
+
+i{
+  margin-right: 1rem;
+}

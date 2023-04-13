@@ -20,12 +20,12 @@
     <app-field-errors [formField]="getFieldControl('phone')"></app-field-errors>
     <div class="mb-3">
       <!-- <label for="email" class="form-label">Email:</label> -->
-      <input formControlName="email" type="text" class="form-control" id="email" placeholder="Example@email.com">
+      <input formControlName="email" type="text" class="form-control" id="email" placeholder="Example@g.com">
     </div>
     <app-field-errors [formField]="getFieldControl('email')"></app-field-errors>
     <div class="mb-3">
       <!-- <label for="address" class="form-label">Address:</label> -->
-      <input formControlName="address" type="text" class="form-control" id="address">
+      <input formControlName="address" type="text" class="form-control" id="address" placeholder="Address">
     </div>
     <app-field-errors [formField]="getFieldControl('address')"></app-field-errors>
 
@@ -34,4 +34,41 @@
         <i class="bi bi-person-plus-fill"></i> Add </button>
     </div>
   </form>
-</div>
+  </div>
+
+  <section>
+    <table class="table table-hover">
+  <thead>
+    <th>No.</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers; let i = index" >
+      <td> <span>{{i+1}}</span>
+        <span>
+        <i routerLink="/selected-customer/{{customer._id}}" class="bi bi-eye text-success"></i>
+        </span>
+        <span>
+        <i routerLink="/edit-customer/{{customer._id}}" class="bi bi-pencil text-primary"></i>
+        </span>
+        <span>
+        <i (click)="onDelete(customer)" class="bi bi-trash text-danger"></i>
+        </span>
+      </td>
+      <td >{{customer.fname}} </td>
+      <td >{{customer.lname}} </td>
+      <td >{{customer.email}} </td>
+      <td >{{customer.phone}} </td>
+      <td >{{customer.address}} </td>
+
+
+
+    </tr>
+  </tbody>
+</table>
+
+  </section>

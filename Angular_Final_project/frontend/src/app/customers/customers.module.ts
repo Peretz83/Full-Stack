@@ -6,6 +6,7 @@ import { SelectedCustomerComponent } from './selected-customer/selected-customer
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from '../auth/auth.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { AuthModule } from '../auth/auth.module';
     CommonModule,
     SharedModule,
     ReactiveFormsModule,
-    AuthModule
+    AuthModule,
+    RouterModule
   ]
 })
 export class CustomersModule { }
