@@ -78,7 +78,9 @@ export class EmployeesPageComponent implements OnInit{
             error: (err) => console.log(err)
         })
     }
-
+  getFieldControl(field: string): FormControl {
+        return this.addEmployeeForm.get(field) as FormControl;
+    }
 
 
 

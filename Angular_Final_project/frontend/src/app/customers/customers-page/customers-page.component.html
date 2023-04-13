@@ -3,72 +3,77 @@
 
 <div class="form-wrap">
   <form [formGroup]="addCustomerForm" (ngSubmit)="onSubmit()" class="addCustomerForm">
-    <div class="mb-3">
+    <div id="input-wrap" class="mb-3">
       <!-- <label for="fname" class="form-label">First Name:</label> -->
       <input formControlName="fname" type="text" class="form-control" id="fname" placeholder="First Name">
     </div>
-    <app-field-errors [formField]="getFieldControl('fname')"></app-field-errors>
-    <div class="mb-3">
+    <app-customer-validation [formField]="getFieldControl('fname')"></app-customer-validation>
+
+    <div id="input-wrap" class="mb-3">
       <!-- <label for="lname" class="form-label">Last Name:</label> -->
       <input formControlName="lname" type="text" class="form-control" id="lname" placeholder="Last Name">
     </div>
-    <app-field-errors [formField]="getFieldControl('lname')"></app-field-errors>
-    <div class="mb-3">
+    <app-customer-validation [formField]="getFieldControl('lname')"></app-customer-validation>
+
+    <div id="input-wrap" class="mb-3">
       <!-- <label for="phone" class="form-label">Phone Number:</label> -->
       <input formControlName="phone" type="text" class="form-control" id="phone" placeholder="Phone Number">
     </div>
-    <app-field-errors [formField]="getFieldControl('phone')"></app-field-errors>
-    <div class="mb-3">
+    <app-customer-validation [formField]="getFieldControl('phone')"></app-customer-validation>
+
+    <div id="input-wrap" class="mb-3">
       <!-- <label for="email" class="form-label">Email:</label> -->
       <input formControlName="email" type="text" class="form-control" id="email" placeholder="Example@g.com">
     </div>
-    <app-field-errors [formField]="getFieldControl('email')"></app-field-errors>
-    <div class="mb-3">
+    <app-customer-validation [formField]="getFieldControl('email')"></app-customer-validation>
+
+    <div id="input-wrap" class="mb-3">
       <!-- <label for="address" class="form-label">Address:</label> -->
       <input formControlName="address" type="text" class="form-control" id="address" placeholder="Address">
     </div>
-    <app-field-errors [formField]="getFieldControl('address')"></app-field-errors>
+    <app-customer-validation [formField]="getFieldControl('address')"></app-customer-validation>
+
 
     <div class="btn-wrap">
       <button [disabled]="addCustomerForm.invalid" type="submit" class="btn btn-primary btn-lg h-2 pb-4">
         <i class="bi bi-person-plus-fill"></i> Add </button>
     </div>
   </form>
-  </div>
+</div>
 
-  <section>
-    <table class="table table-hover">
-  <thead>
-    <th>No.</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Address</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let customer of customers; let i = index" >
-      <td> <span>{{i+1}}</span>
-        <span>
-        <i routerLink="/selected-customer/{{customer._id}}" class="bi bi-eye text-success"></i>
-        </span>
-        <span>
-        <i routerLink="/edit-customer/{{customer._id}}" class="bi bi-pencil text-primary"></i>
-        </span>
-        <span>
-        <i (click)="onDelete(customer)" class="bi bi-trash text-danger"></i>
-        </span>
-      </td>
-      <td >{{customer.fname}} </td>
-      <td >{{customer.lname}} </td>
-      <td >{{customer.email}} </td>
-      <td >{{customer.phone}} </td>
-      <td >{{customer.address}} </td>
+<section>
+  <table class="table table-hover">
+    <thead>
+      <th>No.</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers; let i = index">
+        <td> <span>{{i+1}}</span>
+          <span>
+            <i routerLink="/selected-customer/{{customer._id}}" class="bi bi-eye text-success"></i>
+          </span>
+          <span>
+            <i routerLink="/edit-customer/{{customer._id}}" class="bi bi-pencil text-primary"></i>
+          </span>
+          <span>
+            <i (click)="onDelete(customer)" class="bi bi-trash text-danger"></i>
+          </span>
+        </td>
+        <td>{{customer.fname}} </td>
+        <td>{{customer.lname}} </td>
+        <td>{{customer.email}} </td>
+        <td>{{customer.phone}} </td>
+        <td>{{customer.address}} </td>
 
 
 
-    </tr>
-  </tbody>
-</table>
+      </tr>
+    </tbody>
+  </table>
 
-  </section>
+</section>

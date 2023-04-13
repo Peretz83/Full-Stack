@@ -54,9 +54,7 @@ onSubmit(){
 
 
 }
- getFieldControl(field: string): FormControl {
-        return this.addCustomerForm.get(field) as FormControl;
-    }
+
 
      getAllCustomers() {
         this.api.getCustomers().subscribe({
@@ -78,6 +76,10 @@ onSubmit(){
         })
       }
 
+    }
+
+      getFieldControl(field: string): FormControl {
+        return this.addCustomerForm.get(field) as FormControl;
     }
 
 }

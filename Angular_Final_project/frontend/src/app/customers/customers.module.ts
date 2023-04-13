@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from '../auth/auth.module';
 import { RouterModule } from '@angular/router';
+import { CustomerValidationComponent } from './customer-validation/customer-validation.component';
 
 
 
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     CustomersPageComponent,
     EditCustomerComponent,
-    SelectedCustomerComponent
+    SelectedCustomerComponent,
+    CustomerValidationComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,9 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     AuthModule,
     RouterModule
+  ],
+  exports:[
+    CustomerValidationComponent
   ]
 })
 export class CustomersModule { }

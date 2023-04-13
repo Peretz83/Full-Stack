@@ -7,45 +7,46 @@
 
 
 
-<app-search-page></app-search-page>
+  <app-search-page></app-search-page>
 
-<div class="link-center">
-<a class="text-center" routerLink="/employees">
-    Clear search
-    </a>
+
+
+  <div>
+    <form id="employee-form" [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+
+      <div>
+        <input formControlName="name" type="text" placeholder="Name">
+
+      </div>
+      <app-customer-validation [formField]="getFieldControl('name')"></app-customer-validation>
+      <div>
+        <input formControlName="email" type="text" placeholder="Email">
+
+      </div>
+      <app-customer-validation [formField]="getFieldControl('email')"></app-customer-validation>
+      <div>
+        <input formControlName="phone" type="text" placeholder="Phone">
+
+      </div>
+      <app-customer-validation [formField]="getFieldControl('phone')"></app-customer-validation>
+      <div>
+        <input formControlName="bDay" type="date" placeholder="Birthday">
+
+      </div>
+      <app-customer-validation [formField]="getFieldControl('bDay')"></app-customer-validation>
+
+      <div>
+        <button class="btn btn-primary" [disabled]="addEmployeeForm.invalid" type="submit"><i
+            class="bi bi-plus-circle-fill"></i>Add
+          employee</button>
+
+      </div>
+    </form>
+  </div>
+
+
+  <app-employee-display></app-employee-display>
+
+
+
 </div>
-
- <div class="mycontainer">
-<form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()" class="row mb-4">
-
-  <div class="col-2 m-3">
-    <input formControlName="name" type="text" class="form-control" placeholder="Name">
-
-  </div>
-  <div class="col-2 m-3">
-    <input formControlName="email" type="text" class="form-control" placeholder="Email">
-
-  </div>
-  <div class="col-2 m-3">
-    <input formControlName="phone" type="text" class="form-control" placeholder="Phone">
-
-  </div>
-  <div class="col-2 m-3">
-    <input formControlName="bDay" type="date" class="form-control" placeholder="Birthday">
-
-  </div>
-
-  <div class="w-100 d-flex justify-content-center">
-    <button [disabled]="addEmployeeForm.invalid" type="submit" class="btn w-25 btn-primary emp-btn"><i class="bi bi-plus-circle-fill"></i>Add employee</button>
-
-  </div>
-</form>
-</div>
-
-
-<app-employee-display></app-employee-display>
-
-
-
-</div>
-

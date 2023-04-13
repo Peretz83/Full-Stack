@@ -1,6 +1,12 @@
 <div>
-  <input #s type="text" placeholder="Search TDS"
-  (keyup.enter)="search(s.value)" [value]="searchTerm"/>
-  <button (click)="search(s.value)">Search</button>
+  <section>
+    <input #s type="text" placeholder="Search Employee" (keyup.enter)="search(s.value)" [value]="searchTerm" />
 
+    <button class="btn btn-primary btn-sm" (click)="search(s.value)">Search</button>
+  </section>
+  <span class="link-center">
+    <a class="text-center" routerLink="/employees">
+      Clear search
+    </a>
+  </span>
 </div>
