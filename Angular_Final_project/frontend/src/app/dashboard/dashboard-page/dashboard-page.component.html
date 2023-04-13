@@ -1,1 +1,29 @@
 <app-title [icon]="icon" [title]="title"></app-title>
+
+
+
+<section class="section-wrap">
+  <div class="date-wrap">
+    {{ today | date: 'MMM d, y, h:mm:ss a' }}
+
+
+
+  </div>
+  <div class="main-wrap">
+
+
+
+    <div class="customer-wrap">
+      <h4> <i class="bi bi-person-circle text-primary"></i> Customers</h4>
+      <a routerLink="/customers">
+        <h5>{{customers.length}}</h5>
+      </a>
+    </div>
+    <div class="employee-wrap">
+      <h4> <i class="bi bi-people-fill text-primary"></i> Employees</h4>
+      <a routerLink="/employees">
+        <h5>{{employees.length}}</h5>
+      </a>
+    </div>
+  </div>
+</section>
