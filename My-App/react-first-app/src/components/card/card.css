@@ -1,0 +1,16 @@
+.myImg{
+  width: 100%;
+}
+
+/* .card1{
+width: 18rem;
+} */
+
+.myCard{
+  width: 15rem;
+}
+
+.card-wrap{
+  display: flex;
+  border: solid 2px red;
+}

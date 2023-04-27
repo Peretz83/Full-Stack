@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+#card-wrap{
+ width: 20rem;
+}
+
+ul{
+  list-style-type: none;
+}
+nav{
+background-color: black;
+}
+li{
+  color: white;
+}
