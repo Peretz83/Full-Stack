@@ -7,6 +7,7 @@ import { EditCustomerComponent } from './customers/edit-customer/edit-customer.c
 import { SelectedCustomerComponent } from './customers/selected-customer/selected-customer.component';
 import { DashboardPageComponent } from './dashboard/dashboard-page/dashboard-page.component';
 import { EmployeesPageComponent } from './employees/employees-page/employees-page.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path:"",component:LoginPageComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"selected-customer/:id",component:SelectedCustomerComponent},
   {path:"employees",component:EmployeesPageComponent},
   {path:"dashboard",component:DashboardPageComponent},
-  {path: 'search/:searchTerm', component: EmployeesPageComponent}
+  {path: 'search/:searchTerm', component: EmployeesPageComponent},
+  {path: "**", component:PageNotFoundComponent}
 ];
 
 @NgModule({
